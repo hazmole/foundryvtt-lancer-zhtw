@@ -25,6 +25,15 @@
         "status": "狀態/狀況",
         "talent": "天賦",
         "weapon_mod": "武器改造"
+      },
+      "Action": {
+        "Protocol": "協定",
+        "Full": "完整動作",
+        "Quick": "快速動作",
+        "Free": "自由動作",
+        "Full Tech": "完整科技動作",
+        "Invade": "入侵",
+        "Reaction": "反應"
       }
     },
     "lancer": {
@@ -36,6 +45,7 @@
       "stats": {
         "tier": "等級",
         "hul": "機體",
+        "hull": "機體",
         "agi": "敏捷",
         "sys": "系統",
         "eng": "工程",
@@ -56,6 +66,7 @@
         "burn": "燃燒",
         "overshield": "護盾",
         "activate": "啟動次數",
+        "activations": "啟動次數",
         "repairs": "維修",
         "grit": "毅力",
         "cost": "代價"
@@ -81,6 +92,7 @@
         },
         "label": {
           "rank": "等級",
+          "tactics": "戰術",
           "description": "描述",
           "terse-desc": "簡述",
           "details": "詳細說明",
@@ -139,7 +151,9 @@
           "label": "模板"
         },
         "features": {
-          "label": "特徵"
+          "label": "特徵",
+          "base-features": "基本特徵",
+          "opt-features": "可選特徵"
         },
         "effects": {
           "label": "主動效果"
@@ -243,6 +257,11 @@
           "uncharged": "{target} + :: 充能失敗"
         },
         "remaining": "剩餘 {total} / {max}"
+      },
+      "item": {
+        "adposition": {
+          "use-action": "使用"
+        }
       },
       "floatingDamageNumbers": {
         "name": "Floating Damage Numbers",

@@ -1231,9 +1231,13 @@ export function buildChipHTML(
   const activationClass = `activation-${slugify(activation, "-")}`;
   const themeClass = activationStyle(activation);
   const interactiveClass = options?.nonInteractive ? "noninteractive" : "";
-  const label = `${
-    flowData?.label ? `${flowData.label.toUpperCase()} - ` : `${!options?.nonInteractive ? "USE " : ""}`
-  }${activation.toUpperCase()}`;
+
+  const prefix = flowData?.label
+    ? `${flowData.label.toUpperCase()} - `
+    : `${!options?.nonInteractive ? game.i18n.localize("lancer.item.adposition.use-action") : ""}`;
+  const actionName = game.i18n.localize(`TYPES.Action.${activation}`).toUpperCase();
+  const label = `${prefix}${actionName}`;
+
   if (flowData && flowData.uuid && flowData.path !== undefined) {
     if (!flowData.icon) flowData.icon = `<i class="${activationIcon(activation)} i--sm"></i>`;
     let data = `data-uuid=${flowData.uuid} data-path="${flowData.path}"`;

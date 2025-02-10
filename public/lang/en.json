@@ -25,6 +25,15 @@
       "status": "Status/Condition",
       "talent": "Talent",
       "weapon_mod": "Weapon Mod"
+    },
+    "Action": {
+      "Protocol": "Protocol",
+      "Full": "Full",
+      "Quick": "Quick",
+      "Free": "Free",
+      "Full Tech": "Full Tech",
+      "Invade": "Invade",
+      "Reaction": "Reaction"
     }
   },
   "lancer": {
@@ -36,6 +45,7 @@
     "stats": {
       "tier": "TIER",
       "hul": "HUL",
+      "hull": "HULL",
       "agi": "AGI",
       "sys": "SYS",
       "eng": "ENG",
@@ -56,6 +66,7 @@
       "burn": "BURN",
       "overshield": "O.SHIELD",
       "activate": "ACTIV.",
+      "activations": "ACTIVATIONS",
       "repairs": "REPAIRS",
       "grit": "GRIT",
       "cost": "COST"
@@ -81,6 +92,7 @@
       },
       "label": {
         "rank": "RANK",
+        "tactics": "TACTICS",
         "description": "DESCRIPTION",
         "terse-desc": "TERSE DESCRIPTION",
         "details": "DETAILS",
@@ -139,7 +151,9 @@
         "label": "TEMPLATES"
       },
       "features": {
-        "label": "FEATURES"
+        "label": "FEATURES",
+        "base-features": "BASE FEATURES",
+        "opt-features": "OPTIONAL FEATURES"
       },
       "effects": {
         "label": "ACTIVE EFFECTS"
@@ -243,6 +257,11 @@
         "uncharged": "{target} + :: UNCHARGED"
       },
       "remaining": "{total} / {max} REMAINING"
+    },
+    "item": {
+      "adposition": {
+        "use-action": "USE "
+      }
     },
     "floatingDamageNumbers": {
       "name": "Floating Damage Numbers",
