@@ -55,7 +55,8 @@
         "grit": "毅力"
       },
       "component": {
-        "overcharge": "超限"
+        "overcharge": "超限",
+        "counters": "計數器"
       },
       "placeholder": {
         "name": "名稱"
@@ -63,6 +64,13 @@
       "common-sheet": {
         "tabs": {
           "effects": "<效果//啟動>"
+        },
+        "attack": {
+          "label": "攻擊能力",
+          "melee-ranged": "近戰/遠程",
+          "basic-attack": "基本攻擊",
+          "damage": "傷害",
+          "tech": "科技"
         }
       },
       "deployable-sheet": {
@@ -96,12 +104,6 @@
           "structure": "結算結構傷害",
           "overheat": "結算過熱"
         },
-        "attack": {
-          "label": "攻擊能力",
-          "basic-attack": "近戰/遠程",
-          "damage": "傷害",
-          "tech": "科技"
-        },
         "system": {
           "label": "裝載",
           "sp-used": "SP"
@@ -131,10 +133,10 @@
       },
       "pilot-sheet": {
         "header": {
-          "ll": "牌照等級:",
-          "cs": "呼號:",
-          "name": "名稱:",
-          "bg": "背景:"
+          "ll": "牌照等級：",
+          "cs": "呼號：",
+          "name": "名稱：",
+          "bg": "背景："
         },
         "tabs": {
           "cloud": "<RM-4//同步>",
@@ -162,9 +164,13 @@
         },
         "dossier": {
           "cs": "呼號",
-          "name": "名稱"
+          "name": "名稱",
+          "background": "背景",
+          "history": "經歷",
+          "notes": "註記"
         },
         "narrative": {
+          "license-level": "牌照等級",
           "bond": "與{bondName}的羈絆",
           "burdens": "負擔",
           "clocks": "命刻"

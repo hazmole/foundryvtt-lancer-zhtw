@@ -55,7 +55,8 @@
       "grit": "GRIT"
     },
     "component": {
-      "overcharge": "OVERCHARGE"
+      "overcharge": "OVERCHARGE",
+      "counters": "COUNTERS"
     },
     "placeholder": {
       "name": "Name"
@@ -63,6 +64,13 @@
     "common-sheet": {
       "tabs": {
         "effects": "<EFFECTS//ACTIVE>"
+      },
+      "attack": {
+        "label": "ATTACK UTILITIES",
+        "melee-ranged": "MELEE/RANGED",
+        "basic-attack": "BASIC ATTACK",
+        "damage": "DAMAGE",
+        "tech": "TECH"
       }
     },
     "deployable-sheet": {
@@ -95,12 +103,6 @@
         "full_repair": "FULL REPAIR",
         "structure": "STRUCTURE",
         "overheat": "OVERHEAT"
-      },
-      "attack": {
-        "label": "ATTACK UTILITIES",
-        "basic-attack": "MELEE/RANGED",
-        "damage": "DAMAGE",
-        "tech": "TECH"
       },
       "system": {
         "label": "LOADOUT",
@@ -162,9 +164,13 @@
       },
       "dossier": {
         "cs": "CALLSIGN",
-        "name": "NAME"
+        "name": "NAME",
+        "background": "BACKGROUND",
+        "history": "HISTORY",
+        "notes": "NOTES"
       },
       "narrative": {
+        "license-level": "LICENSE LEVEL",
         "bond": "BOND OF {bondName}",
         "burdens": "BURDENS",
         "clocks": "CLOCKS"
