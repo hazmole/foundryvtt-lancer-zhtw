@@ -1007,7 +1007,7 @@ export function buildActionHTML(
         <hr class="hsep">
         ${chip}
         ${editDetails}
-        ${action.detail || defaultPlaceholder}
+        ${action.detail || game.i18n.localize(defaultPlaceholder)}
       </div>`;
   // Otherwise, look to be explicit about which is which
   else {
@@ -1018,9 +1018,9 @@ export function buildActionHTML(
           ${chip}
           <div>
             <div class="overline">${game.i18n.localize("lancer.chat-card.label.trigger")}</div> 
-            ${action.trigger || defaultPlaceholder}
+            ${action.trigger || game.i18n.localize(defaultPlaceholder)}
             <div class="overline">${game.i18n.localize("lancer.chat-card.label.effect")} ${editDetails}</div>
-            ${action.detail || defaultPlaceholder}
+            ${action.detail || game.i18n.localize(defaultPlaceholder)}
           </div>
         </div>
       </div>`;

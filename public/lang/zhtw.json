@@ -1,0 +1,472 @@
+{
+    "TYPES": {
+      "Actor": {
+        "deployable": "可佈署物件",
+        "mech": "機甲",
+        "npc": "NPC",
+        "pilot": "駕駛員"
+      },
+      "Item": {
+        "bond": "羈絆",
+        "core_bonus": "核心加成",
+        "frame": "骨架",
+        "license": "牌照",
+        "mech_system": "機甲系統",
+        "mech_weapon": "機甲武器",
+        "npc_class": "NPC 種類",
+        "npc_feature": "NPC 特徵",
+        "npc_template": "NPC 模板",
+        "organization": "組織",
+        "pilot_armor": "駕駛員護甲",
+        "pilot_gear": "駕駛員裝備",
+        "pilot_weapon": "駕駛員武器",
+        "reserve": "儲備",
+        "skill": "技能觸發",
+        "status": "狀態/狀況",
+        "talent": "天賦",
+        "weapon_mod": "武器改造"
+      }
+    },
+    "lancer": {
+      "Actor": {
+        "FIELDS": {
+          "activations": { "label": "啟動" }
+        }
+      },
+      "stats": {
+        "hul": "機體",
+        "agi": "敏捷",
+        "sys": "系統",
+        "eng": "工程",
+        "hp": "HP",
+        "heat": "熱度",
+        "evasion": "迴避",
+        "armor": "裝甲",
+        "structure": "結構",
+        "stress": "壓力",
+        "edef": "電子防禦",
+        "speed": "速度",
+        "save": "豁免目標",
+        "sensor_range": "感應範圍",
+        "tech_attack": "科技攻擊",
+        "burn": "燃燒",
+        "overshield": "護盾",
+        "repairs": "維修",
+        "grit": "毅力"
+      },
+      "component": {
+        "overcharge": "超限"
+      },
+      "placeholder": {
+        "name": "名稱"
+      },
+      "common-sheet": {
+        "tabs": {
+          "effects": "<效果//啟動>"
+        }
+      },
+      "deployable-sheet": {
+        "tabs": {
+          "status": "<狀態>",
+          "config": "<設定>"
+        },
+        "deployer": {
+          "label": "佈署者"
+        },
+        "stats": {
+          "label": "基本屬性"
+        }
+      },
+      "mech-sheet": {
+        "tabs": {
+          "stats": "<機甲//屬性>",
+          "loadout": "<機甲//裝載>",
+          "talents": "<駕駛員//天賦>"
+        },
+        "core": {
+          "label": "核心"
+        },
+        "actions": {
+          "label": "動作"
+        },
+        "macros": {
+          "label": "巨集",
+          "stabilize": "穩住陣腳",
+          "full_repair": "全面維修",
+          "structure": "結算結構傷害",
+          "overheat": "結算過熱"
+        },
+        "attack": {
+          "label": "攻擊能力",
+          "basic-attack": "近戰/遠程",
+          "damage": "傷害",
+          "tech": "科技"
+        },
+        "system": {
+          "label": "裝載",
+          "sp-used": "SP"
+        },
+        "msg": {
+          "inactive_mech": "警告：機甲未啟用 - 無法追蹤駕駛員加值",
+          "view_inventory": "檢視裝載目錄"
+        }
+      },
+      "npc-sheet": {
+        "header": {
+          "class": "種類:"
+        },
+        "class": {
+          "label": "種類",
+          "none": "查無種類"
+        },
+        "templates": {
+          "label": "模板"
+        },
+        "features": {
+          "label": "特徵"
+        },
+        "effects": {
+          "label": "主動效果"
+        }
+      },
+      "pilot-sheet": {
+        "header": {
+          "ll": "牌照等級:",
+          "cs": "呼號:",
+          "name": "名稱:",
+          "bg": "背景:"
+        },
+        "tabs": {
+          "cloud": "<RM-4//同步>",
+          "dossier": "<駕駛員//檔案>",
+          "narrative": "<駕駛員//敘事>",
+          "tactical": "<駕駛員//戰術>",
+          "loadout": "<裝備//裝載>",
+          "mech": "<機甲//啟動>"
+        },
+        "cloud-header": {
+          "label": "RM-4://(寰宇通信鏈路 ID)",
+          "vaultID": "從你的 Comp/Con 帳號讀取 (若已登入)",
+          "raw-placeholder": "或直接手動輸入代碼"
+        },
+        "cloud-download": {
+          "label": "下載",
+          "lastSync": "上次同步: {timestamp}"
+        },
+        "cloud-upload": {
+          "label": "上傳",
+          "wip": "功能開發中"
+        },
+        "json-import": {
+          "label": "導入"
+        },
+        "dossier": {
+          "cs": "呼號",
+          "name": "名稱"
+        },
+        "narrative": {
+          "bond": "與{bondName}的羈絆",
+          "burdens": "負擔",
+          "clocks": "命刻"
+        },
+        "tactical": {
+          "armor": "裝甲",
+          "weapons": "武器",
+          "gear": "裝備",
+          "reserves": "儲備",
+          "licenses": "牌照",
+          "cores": "核心加成"
+        },
+        "abilities": {
+          "skills": "技能觸發",
+          "talents": "天賦"
+        }
+      },
+      "chat-card": {
+        "title": {
+          "attack": "// 攻擊 //",
+          "damage": "// 傷害 //",
+          "reliable": "// 可靠 //",
+          "crit-damage": "// 暴擊傷害 //",
+          "self-heat": "// 自產熱度 //",
+          "defense-hit": "// 攻擊 VS {defense} //",
+          "effect": "// 效果 //",
+          "on-attack": "// 攻擊時 //",
+          "on-hit": "// 命中時 //",
+          "on-crit": "// 暴擊時 //",
+          "charge-roll": "// 充能骰 //",
+          "recharged": "// 成功充能 //",
+          "structure": "// 結構傷害 //",
+          "overheating": "// 過熱 //",
+          "cascade": "// 崩潰 //",
+          "check": "// 判定 :: {check} //",
+          "system": "// 系統 :: {title} //",
+          "mod": "// MOD :: {title} //",
+          "trait": "// TRAIT :: {title} //",
+          "tech": "// 科技 :: {title} //",
+          "reaction": "// 反應 :: {title} //"
+        },
+        "label": {
+          "trigger": "觸發",
+          "effect": "效果"
+        },
+        "attack": {
+          "crit": "暴擊",
+          "hit": "命中",
+          "miss": "失手",
+          "roll-all-damage": "骰傷害"
+        },
+        "exclamation": {
+          "overkill": "過量殺傷!"
+        },
+        "overcharge": {
+          "charged": "{target} + :: 充能成功",
+          "uncharged": "{target} + :: 充能失敗"
+        },
+        "remaining": "剩餘 {total} / {max}"
+      },
+      "floatingDamageNumbers": {
+        "name": "Floating Damage Numbers",
+        "hint": "Enable floating damage numbers for changes to stats, including applying damage rolls. This setting is separate for each client."
+      },
+      "uiTheme": {
+        "name": "UI 主題",
+        "hint": "Colour scheme for the UI, echoing Comp/Con's themes.",
+        "gms": "GMS 赤紅 (預設)",
+        "gmsDark": "GMS 暗色",
+        "msmc": "MSMC 曝曬",
+        "horus": "HORUS 終端",
+        "ha": "Harrison Armory Ras Shamra",
+        "ssc": "SSC Constellar Congress",
+        "ipsn": "IPS-N Carina",
+        "gal": "FORECAST/GALSIM"
+      },
+      "statusIconsConfig": {
+        "menu-name": "Status Icons",
+        "menu-label": "Status Icon Configuration",
+        "menu-hint": "Configure the status icons that appear on the token HUD",
+        "defaultConditionsStatus": "Default Conditions & Status",
+        "defaultConditionsStatus-desc": "Enable the default icon set for conditions & status",
+        "cancerConditionsStatus": "Cancermantis' Conditions & Status",
+        "cancerConditionsStatus-desc": "Enable Cancermantis' icon set for conditions & status",
+        "cancerNPCTemplates": "Cancermantis' NPC Templates",
+        "cancerNPCTemplates-desc": "Enable Cancermantis' icon set for NPC templates",
+        "hayleyConditionsStatus": "Hayley's Condition & Status",
+        "hayleyConditionsStatus-desc": "Enable Hayley's icon set for conditions & status",
+        "hayleyPC": "Hayley's PC Systems",
+        "hayleyPC-desc": "Enable Hayley's icon set for PC system effects",
+        "hayleyNPC": "Hayley's NPC Systems",
+        "hayleyNPC-desc": "Enable Hayley's icon set for NPC system effects",
+        "hayleyUtility": "Hayley's Utility",
+        "hayleyUtility-desc": "Enable Hayley's icon set for utility indicators",
+        "tommyConditionsStatus": "Tommy's Condition & Status",
+        "tommyConditionsStatus-desc": "Enable Tommy's icon set for conditions & status"
+      },
+      "statusIconsNames": {
+        "abjure": "Abjure",
+        "aceso": "Aceso",
+        "blind": "Blind",
+        "bolster": "Bolster",
+        "burn": "燃燒",
+        "camus_razor": "Camus' Razor",
+        "chain": "Chain",
+        "chains_of_prometheus": "Chains of Prometheus",
+        "clamp_bomb": "Clamp Bomb",
+        "commander": "Commander",
+        "cover_hard": "硬性掩護",
+        "cover_soft": "軟性掩護",
+        "dangerzone": "超溫危域",
+        "destroyed": "Destroyed",
+        "dimensional_shackles": "Dimensional Shackles",
+        "dispersal_shield_1": "Dispersal Shield 1",
+        "dispersal_shield_2": "Dispersal Shield 2",
+        "dispersal_shield_3": "Dispersal Shield 3",
+        "dominions_breadth": "Dominion's Breadth",
+        "downandout": "昏迷",
+        "duat_gate": "Duat Gate",
+        "echo_edge": "Echo Edge",
+        "elite": "Elite",
+        "engaged": "交戰",
+        "excommunicate": "Excommunicate",
+        "exotic": "Exotic",
+        "exposed": "曝露",
+        "fade_cloak": "Fade Cloak",
+        "flaw_minus": "FLAW_minus",
+        "flaw_plus": "FLAW_plus",
+        "flying": "Flying",
+        "focus_down": "Focus Down",
+        "follower_count": "Follower Count",
+        "grappled": "Grappled",
+        "gravity": "Gravity",
+        "grind_maniple": "Grind Maniple",
+        "grunt": "Grunt",
+        "haste": "Haste",
+        "hidden": "匿跡",
+        "hiddeninvis": "Hidden and Invisible",
+        "hunter_lock": "Hunter Lock",
+        "hyperdense_armor": "Hyperdense Armor",
+        "illusionary_subroutines": "Illusionary Subroutines",
+        "immobilized": "固定",
+        "impaired": "受損",
+        "imperial_eye": "Imperial Eye",
+        "intangible": "Intangible",
+        "investiture": "Investiture",
+        "invisible": "隱形",
+        "jammed": "受擾",
+        "kraul_grapple": "Kraul Grapple",
+        "latch_drone": "Latch Drone",
+        "lockon": "鎖定",
+        "marked": "Marked",
+        "mercenary": "Mercenary",
+        "metahook": "Metahook",
+        "molten_puncture": "Molten Puncture",
+        "npc_tier_1": "Tier 1",
+        "npc_tier_2": "Tier 2",
+        "npc_tier_3": "Tier 3",
+        "overshield": "Overshield",
+        "pain_transference": "Pain Transference",
+        "petrify": "Petrify",
+        "pirate": "Pirate",
+        "prone": "伏臥",
+        "reactor_meltdown": "Reactor Meltdown",
+        "resistance_burn": "Resist Burn",
+        "resistance_energy": "Resist Energy",
+        "resistance_explosive": "Resist Explosive",
+        "resistance_heat": "Resist Heat",
+        "resistance_kinetic": "Resist Kinetic",
+        "retort_loop": "Retort Loop",
+        "rpv": "RPV",
+        "sanctuary": "Sanctuary",
+        "shahnameh": "Shahnameh",
+        "ship": "Ship",
+        "shredded": "離散",
+        "shutdown": "關機",
+        "slow": "緩慢",
+        "spacer": "Spacer",
+        "spike": "Spike",
+        "stasis": "Stasis",
+        "stunned": "暈眩",
+        "supercharger": "Supercharger",
+        "sympathetic_shield": "Sympathetic_shield",
+        "tachyon_shield": "Tachyon Shield",
+        "tear_down": "Tear Down",
+        "terrify": "Terrify",
+        "tiercust": "Custom Tier",
+        "tracking_bug": "Tracking Bug",
+        "trueblack": "Trueblack Aegis",
+        "ultra": "超體",
+        "unravel": "Unravel",
+        "vehicle": "Vehicle",
+        "veteran": "老兵",
+        "viral_logic": "Viral Logic",
+        "walk_of_kings": "Walk of Kings",
+        "warp_sensors": "Warp Sensors"
+      },
+      "automation": {
+        "menu-name": "Automation",
+        "menu-label": "System Automation Settings",
+        "menu-hint": "Set up what system automation options are enabled, or turn them all off",
+        "master-switch": "Enabled",
+        "master-switch-desc": "Turn this off to do everything manually",
+        "attacks": "Attack roll evaluation",
+        "attacks-desc": "Toggle for whether or not you want the system to auto-calculate hits and other attack related automation.",
+        "damage": "應用傷害",
+        "damage-desc": "Toggle for whether or not you want the system to apply rolled damage to targets.",
+        "structure": "結構/壓力",
+        "structure-desc": "Automatically prompt for a structure or stress roll when a mech reaches 0 hp or exceeds its heat cap.",
+        "overcharge_heat": "應用超限熱度",
+        "overcharge_heat-desc": "自動應用超限時擲骰決定的熱度",
+        "attack_self_heat": "Self Heat from Attacks",
+        "attack_self_heat-desc": "When a weapon has the Overkill or Heat (self) tags, automatically apply any heat.",
+        "remove_templates": "Remove Templates Each Turn",
+        "remove_templates-desc": "When the turn changes, should measured templates from attacks be cleared?",
+        "limited_loading": "Manage Limited/Loading",
+        "limited_loading-desc": "When items are used, should their limited and loading status be automatically managed and tracked?",
+        "npc_recharge": "NPC 充能",
+        "npc_recharge-desc": "Automatically roll to recharge NPC systems at the start of their turn.",
+        "token_size": "Manage Token Sizes",
+        "token_size-desc": "Automatically force tokens sizes to match the associated actor's size stat."
+      },
+      "actionTracker": {
+        "menu-name": "Action Tracker",
+        "menu-label": "Action Tracker Settings",
+        "menu-hint": "Configure options related to action tracker HUD and automations.",
+        "showHotbar": "Show Hotbar",
+        "showHotbar-desc": "Toggles the display of the floating hotbar during combat.",
+        "allowPlayers": "Allow Players",
+        "allowPlayers-desc": "Allows players to modify their own actions.",
+        "printMessages": "Print Messages",
+        "printMessages-desc": "Prints chat messages for start and end of a token's turn."
+      },
+      "initiative": {
+        "sorttracker": "Sort the tracker",
+        "sorttracker-desc": "Moves the unit currently taking their turn to the top of the tracker and moves units that have taken their turn to the end of the tracker.",
+        "appearancesettingslabel": "Appearance Settings",
+        "appearancesettingsbutton": "Appearance",
+        "appearancesettings-desc": "Configure the colors and icon used in the tracker"
+      },
+      "squaregriddiagonals": {
+        "name": "方格對角移動算法",
+        "hint": "在方形網格進行對角移動時的距離算法。",
+        "111": "1-1-1: 對角移動視作 1 格 (預設)",
+        "121": "1-2-1: 對角移動視作 1~2 格",
+        "222": "2-2-2: 曼哈頓距離算法。對角移動視作 2 格",
+        "euc": "歐基里德：歐基里德距離算法，小數點進位"
+      },
+      "effect": {
+        "categories": {
+          "passive": "被動",
+          "passthrough": "穿透",
+          "disabled": "停用",
+          "inherited": "繼承"
+        }
+      },
+      "compendium": {
+        "core_macros": "LANCER 巨集",
+        "lancer_info": "LANCER 資訊",
+        "deployable": "可部屬物件",
+        "mech-items": "機甲彙編",
+        "npc-actors": "預製 NPCs",
+        "npc-items": "NPC 彙編",
+        "pilot-items": "駕駛員彙編",
+        "player-actors": "預製玩家角色",
+        "status-items": "狀態/狀況"
+      },
+      "tokenConfig": {
+        "manual_token_size": {
+          "label": "手動調整 Token 尺寸",
+          "hint": "繞過系統自動工序來決定 token 的大小"
+        }
+      },
+      "missing-entry": "// 查無此條目 //"
+    },
+    "LANCERINITIATIVE": {
+      "IconSettingsMenu": "Icon Settings",
+      "Icon": "Action Icon",
+      "IconDesc": "CSS classes to define the activation icon.",
+      "DeactivateIcon": "Deactivation Icon",
+      "DeactivateIconDesc": "CSS classes to define the deactivation icon.",
+      "IconSize": "Icon Size",
+      "IconPreview": "Icon Preview",
+      "PCColor": "玩家代表色",
+      "PCColorDesc": "預設: #44abe0",
+      "FriendlyColor": "友方代表色",
+      "FriendlyColorDesc": "預設: #44abe0",
+      "NeutralColor": "中立代表色",
+      "NeutralColorDesc": "預設: #146464",
+      "EnemyColor": "敵人代表色",
+      "EnemyColorDesc": "預設: #d98f30",
+      "DoneColor": "未啟動代表色",
+      "DoneColorDesc": "預設: #aaaaaa",
+      "ActivatedLast": "Activated Units Last",
+      "ActivatedLastDesc": "Moves units that have taken their turn to the end of the tracker.",
+      "SortTracker": "Sort the Tracker",
+      "SortTrackerDesc": "Moves the unit currently taking their turn to the top of the tracker and moves units that have taken their turn to the end of the tracker.",
+      "EnableInitiative": "Enable Initiative Rolling",
+      "EnableInitiativeDesc": "Adds a button to owned combatants for rolling initiative",
+      "AddActivation": "Add Activation",
+      "RemoveActivation": "Remove Activation",
+      "UndoActivation": "Undo Activation"
+    }
+  }
+  

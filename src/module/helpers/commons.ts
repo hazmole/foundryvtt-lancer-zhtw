@@ -9,7 +9,7 @@ import { LancerActor } from "../actor/lancer-actor";
 import { LancerItem } from "../item/lancer-item";
 import { slugify } from "../util/lid";
 
-export const defaultPlaceholder = "// MISSING ENTRY //";
+export const defaultPlaceholder = "lancer.missing-entry";
 
 // A shorthand for only including the first string if the second value is truthy
 export function inc_if(val: string, test: any) {
@@ -713,7 +713,7 @@ function std_input(path: string, type: string, options: HelperOptions) {
 
   let html_type = type.toLowerCase();
   let data_type = type == "Password" || type == "Text" ? "String" : type;
-  let placeholder = type == "Text" || type == "String" ? `placeholder="${defaultPlaceholder}"` : "";
+  let placeholder = type == "Text" || type == "String" ? `placeholder="${game.i18n.localize(defaultPlaceholder)}"` : "";
 
   let input = `<input class="grow ${input_classes}" name="${path}" value="${value}" type="${html_type}" data-dtype="${data_type}" ${placeholder}/>`;
 
@@ -868,7 +868,7 @@ export function safe_html_helper(orig: string) {
   // then kill all on<event>. Technically this will hit attrs, we don't really care
   let bad = /on[a-zA-Z\-]+=".*?"/g;
   orig = orig.replace(bad, "");
-  return orig || defaultPlaceholder;
+  return orig || game.i18n.localize(defaultPlaceholder);
 }
 
 // These typically are the exact same so we made a helper for 'em
@@ -881,7 +881,7 @@ export function large_textbox_card(title: string, text_path: string, options: He
       ${popout_editor_button(text_path)}
     </div>
     <div class="desc-text">
-      ${safe_html_helper(resolved?.trim() || defaultPlaceholder)}
+      ${safe_html_helper(resolved?.trim() || game.i18n.localize(defaultPlaceholder))}
     </div>
   </div>
   `;

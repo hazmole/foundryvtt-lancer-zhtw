@@ -33,6 +33,30 @@
         "activations": { "label": "Activations" }
       }
     },
+    "stats": {
+      "hul": "HUL",
+      "agi": "AGI",
+      "sys": "SYS",
+      "eng": "ENG",
+      "hp": "HP",
+      "heat": "HEAT",
+      "evasion": "EVASION",
+      "armor": "ARMOR",
+      "structure": "STRUCTURE",
+      "stress": "STRESS",
+      "edef": "E-DEF",
+      "speed": "SPEED",
+      "save": "SAVE",
+      "sensor_range": "SENSORS",
+      "tech_attack": "TECH ATK",
+      "burn": "BURN",
+      "overshield": "O.SHIELD",
+      "repairs": "REPAIRS",
+      "grit": "GRIT"
+    },
+    "component": {
+      "overcharge": "OVERCHARGE"
+    },
     "placeholder": {
       "name": "Name"
     },
@@ -66,11 +90,25 @@
         "label": "ACTIONS"
       },
       "macros": {
-        "label": "MACROS"
+        "label": "MACROS",
+        "stabilize": "STABILIZE",
+        "full_repair": "FULL REPAIR",
+        "structure": "STRUCTURE",
+        "overheat": "OVERHEAT"
+      },
+      "attack": {
+        "label": "ATTACK UTILITIES",
+        "basic-attack": "MELEE/RANGED",
+        "damage": "DAMAGE",
+        "tech": "TECH"
       },
       "system": {
         "label": "LOADOUT",
         "sp-used": "SP USED"
+      },
+      "msg": {
+        "inactive_mech": "WARNING: INACTIVE MECH - PILOT BONUSES NOT TRACKED",
+        "view_inventory": "View Inventory"
       }
     },
     "npc-sheet": {
@@ -399,7 +437,8 @@
         "label": "Manual Token Sizing",
         "hint": "Bypass system automation for determining token size"
       }
-    }
+    },
+    "missing-entry": "// MISSING ENTRY //"
   },
   "LANCERINITIATIVE": {
     "IconSettingsMenu": "Icon Settings",

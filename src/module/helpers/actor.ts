@@ -389,7 +389,7 @@ export function overchargeButton(actor: LancerMECH, overcharge_path: string, opt
   return `
     <div class="flexcol card clipped">
       <div class="lancer-header lancer-primary clipped-top flexrow">
-        <span class="major">OVERCHARGE</span>
+        <span class="major">${game.i18n.format("lancer.component.overcharge")}</span>
       </div>
       <div class="overcharge-container">
         ${flowButton}
