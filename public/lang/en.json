@@ -80,6 +80,9 @@
         "tech": "TECH"
       },
       "label": {
+        "rank": "RANK",
+        "description": "DESCRIPTION",
+        "terse-desc": "TERSE DESCRIPTION",
         "details": "DETAILS",
         "notes": "NOTES"
       }

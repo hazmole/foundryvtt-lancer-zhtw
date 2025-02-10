@@ -5,7 +5,7 @@
       <h1 class="charname"><input class="header-field" name="name" type="text" value="{{item.name}}"
                                   placeholder="{{localize " lancer.placeholder.name"}}" /></h1>
       <div class="flexrow">
-        <span>RANK:</span>
+        <span>{{ localize "lancer.common-sheet.label.rank" }}:</span>
         {{{l-num-input "system.curr_rank"}}}
       </div>
     </div>
@@ -13,7 +13,7 @@
   </header>
 
   {{!-- Sheet Body --}}
-  {{{textarea-card "DESCRIPTION" "system.description"}}}
+  {{{textarea-card (localize "lancer.common-sheet.label.description") "system.description"}}}
 
-  {{{textarea-card "DETAILS" "system.detail"}}}
+  {{{textarea-card (localize "lancer.common-sheet.label.details") "system.detail"}}}
 </form>

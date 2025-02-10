@@ -80,6 +80,9 @@
           "tech": "科技"
         },
         "label": {
+          "rank": "等級",
+          "description": "描述",
+          "terse-desc": "簡述",
           "details": "詳細說明",
           "notes": "註記"
         }
