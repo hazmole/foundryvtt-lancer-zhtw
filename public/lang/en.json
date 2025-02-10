@@ -34,11 +34,14 @@
       }
     },
     "stats": {
+      "tier": "TIER",
       "hul": "HUL",
       "agi": "AGI",
       "sys": "SYS",
       "eng": "ENG",
+      "max-hp": "MAX HP",
       "hp": "HP",
+      "heatcap": "HEAT CAP",
       "heat": "HEAT",
       "evasion": "EVASION",
       "armor": "ARMOR",
@@ -47,16 +50,20 @@
       "edef": "E-DEF",
       "speed": "SPEED",
       "save": "SAVE",
+      "size": "SIZE",
       "sensor_range": "SENSORS",
       "tech_attack": "TECH ATK",
       "burn": "BURN",
       "overshield": "O.SHIELD",
+      "activate": "ACTIV.",
       "repairs": "REPAIRS",
-      "grit": "GRIT"
+      "grit": "GRIT",
+      "cost": "COST"
     },
     "component": {
       "overcharge": "OVERCHARGE",
-      "counters": "COUNTERS"
+      "counters": "COUNTERS",
+      "recharge": "Recharge"
     },
     "placeholder": {
       "name": "Name"
@@ -71,6 +78,10 @@
         "basic-attack": "BASIC ATTACK",
         "damage": "DAMAGE",
         "tech": "TECH"
+      },
+      "label": {
+        "details": "DETAILS",
+        "notes": "NOTES"
       }
     },
     "deployable-sheet": {
@@ -166,8 +177,7 @@
         "cs": "CALLSIGN",
         "name": "NAME",
         "background": "BACKGROUND",
-        "history": "HISTORY",
-        "notes": "NOTES"
+        "history": "HISTORY"
       },
       "narrative": {
         "license-level": "LICENSE LEVEL",
