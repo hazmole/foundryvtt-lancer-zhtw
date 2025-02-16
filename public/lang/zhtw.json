@@ -36,6 +36,40 @@
         "Reaction": "反應"
       }
     },
+    "TABLES": {
+      "structure": {
+        "title": {
+          "crushing_hit": "致命一擊",
+          "direct_hit": "直擊",
+          "system_trama": "系統創傷",
+          "glancing_blow": "擦彈"
+        },
+        "effect": {
+          "crushing_hit": "你的機甲受損太嚴重而無法修復——它被毀了。你仍能夠如常離開。",
+          "direct_hit_1": "你的機甲被毀。",
+          "direct_hit_2": "進行<b>機體判定</b>。成功的話，你的機甲 @Compendium[world.status-items.Stunned] 直到你的下一回合結果。失敗的話，你的機甲被毀。",
+          "direct_hit_3+": "你的機甲 @Compendium[world.status-items.Stunned] 直到你的下一回合結束。",
+          "system_trama": "你的機甲有一部份被損傷破壞了。骰1d6：如結果為1-3，任意一個掛載點上的所有武器也被毀；如結果為4-6，任意一個系統被毀。不能選擇已經用盡發數的受限系統和武器。如無可選項目，則改為使用另一個結果。如無系統或武器可以選擇，結果則變成<b>直擊</b>。",
+          "glancing_blow": "緊急系統起動並穩住你的機甲，不過它直到你的下一回合結束前也會 @Compendium[world.status-items.Impaired]。"
+        }
+      },
+      "overheat": {
+        "title": {
+          "irreversible_meltdown": "不可逆熔解",
+          "meltdown": "爐心熔解",
+          "destabilized_power_plant": "反應爐失衡",
+          "emergency_shunt": "緊急排熱"
+        },
+        "effect": {
+          "irreversible_meltdown": "反應爐進入超臨界狀態——你的機甲會在你的下一回合結束時爐心熔解。",
+          "meltdown_1": "你的機甲會在你的下一回合結束時爐心熔解。",
+          "meltdown_2": "進行<b>工程判定</b>。成功的話，你的機甲進入 @Compendium[world.status-items.Exposed] 狀態。失敗的話，機甲會在你的 1d6 個回合（由GM擲骰）後爐心熔解。消耗<b>完整動作</b>來重試<b>工程判定</b>可阻止爐心熔解發生。",
+          "meltdown_3+": "你的機甲進入 @Compendium[world.status-items.Exposed] 狀態。",
+          "destabilized_power_plant": "反應爐變得不穩，並且開始噴射高熱電漿。你的機甲進入 @Compendium[world.status-items.Exposed] 狀態。",
+          "emergency_shunt": "機甲的冷卻系統成功控制過量的熱度，不過它直到你的下一回合結束前也會 @Compendium[world.status-items.Impaired]。"
+        }
+      }
+    },
     "lancer": {
       "Actor": {
         "FIELDS": {
