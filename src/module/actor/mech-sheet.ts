@@ -7,6 +7,7 @@ import { EntryType, fittingsForMount, FittingSize, MountType, SystemType } from 
 import { SystemData } from "../system-template";
 import { LancerActorSheetData } from "../interfaces";
 import { SourceData } from "../source-template";
+import { localizeMountType } from "../helpers/loadout";
 
 /**
  * Extend the basic ActorSheet
@@ -177,7 +178,7 @@ export class LancerMechSheet extends LancerActorSheet<EntryType.MECH> {
     // Handle generic mount type
     for (let selection of Object.values(MountType)) {
       mount_options.push({
-        name: selection,
+        name: localizeMountType(selection),
         icon: "",
         callback: async (html: JQuery) => {
           let mountPath = html[0].dataset.path ?? "";

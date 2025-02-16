@@ -170,10 +170,12 @@ function weaponMount(mount_path: string, options: HelperOptions): string {
     }
   }
 
+  let mountTypeText = localizeMountType(mount.type);
+
   return ` 
     <div class="mount card" >
       <div class="lancer-header lancer-primary mount-type-ctx-root" data-path="${mount_path}">
-        <span>${mount.type} Weapon Mount</span>
+        <span>${game.i18n.localize("lancer.mech-sheet.system.blank_weapon_mount").replace("{0}", mountTypeText)}</span>
         <a class="gen-control fas fa-trash" data-action="splice" data-path="${mount_path}"></a>
         <a class="reset-weapon-mount-button fas fa-redo" data-path="${mount_path}"></a>
       </div>
@@ -182,6 +184,29 @@ function weaponMount(mount_path: string, options: HelperOptions): string {
         ${slots.join("")}
       </div>
     </div>`;
+}
+
+export function localizeMountType(typeVal: string): string {
+  switch (typeVal) {
+    case "Main":
+      return game.i18n.localize("TYPES.WeaponMount.Main");
+    case "Aux":
+      return game.i18n.localize("TYPES.WeaponMount.Aux");
+    case "Aux/Aux":
+      return game.i18n.localize("TYPES.WeaponMount.Aux-aux");
+    case "Main/Aux":
+      return game.i18n.localize("TYPES.WeaponMount.Main-aux");
+    case "Flex":
+      return game.i18n.localize("TYPES.WeaponMount.Flexible");
+    case "Heavy":
+      return game.i18n.localize("TYPES.WeaponMount.Heavy");
+    case "Superheavy":
+      return game.i18n.localize("TYPES.WeaponMount.Superheavy");
+    case "Integrated":
+      return game.i18n.localize("TYPES.WeaponMount.Integrated");
+    default:
+      return typeVal;
+  }
 }
 
 // Helper to display all weapon mounts on a mech loadout
@@ -194,7 +219,7 @@ function allWeaponMountView(loadout_path: string, options: HelperOptions) {
   return `
     <div class="lancer-header lancer-dark-gray loadout-category submajor">
       <i class="mdi mdi-unfold-less-horizontal collapse-trigger collapse-icon" data-collapse-id="weapons"></i>   
-      <span>MOUNTED WEAPONS</span>
+      <span>${game.i18n.localize("lancer.mech-sheet.system.mounted_weapons")}</span>
       <a class="gen-control fas fa-plus" data-action="append" data-path="${loadout_path}.weapon_mounts" data-action-value="(struct)wep_mount"></a>
       <a class="reset-all-weapon-mounts-button fas fa-redo" data-path="${loadout_path}.weapon_mounts"></a>
     </div>
@@ -216,7 +241,7 @@ function allMechSystemsView(loadout_path: string, options: HelperOptions) {
   return `
     <div class="lancer-header lancer-dark-gray loadout-category submajor">
       <i class="mdi mdi-unfold-less-horizontal collapse-trigger collapse-icon" data-collapse-id="systems"></i>    
-      <span>MOUNTED SYSTEMS</span>
+      <span>${game.i18n.localize("lancer.mech-sheet.system.mounted_systems")}</span>
       <span style="flex-grow: 0">
         <i class="cci cci-system-point i--m"></i>
         ${loadout.sp.value} / ${loadout.sp.max} SP USED

@@ -34,6 +34,16 @@
         "Full Tech": "完整科技動作",
         "Invade": "入侵",
         "Reaction": "反應"
+      },
+      "WeaponMount": {
+        "Main": "主",
+        "Aux": "副",
+        "Heavy": "重型",
+        "Aux-aux": "副/副",
+        "Main-aux": "主/副",
+        "Flexible": "靈活",
+        "Integrated": "內建",
+        "Superheavy": "超重型"
       }
     },
     "TABLES": {
@@ -166,7 +176,10 @@
         },
         "system": {
           "label": "裝載",
-          "sp-used": "SP"
+          "sp-used": "SP",
+          "mounted_weapons": "掛載武器",
+          "blank_weapon_mount": "{0}掛載點",
+          "mounted_systems": "裝載系統"
         },
         "msg": {
           "inactive_mech": "警告：機甲未啟用 - 無法追蹤駕駛員加值",

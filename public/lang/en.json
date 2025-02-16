@@ -34,6 +34,16 @@
       "Full Tech": "Full Tech",
       "Invade": "Invade",
       "Reaction": "Reaction"
+    },
+    "WeaponMount": {
+      "Main": "Main",
+      "Aux": "Aux",
+      "Heavy": "Heavy",
+      "Aux-aux": "Aux/Aux",
+      "Main-aux": "Main/Aux",
+      "Flexible": "Flexible",
+      "Integrated": "Integrated",
+      "Superheavy": "Superheavy"
     }
   },
   "TABLES": {
@@ -166,7 +176,10 @@
       },
       "system": {
         "label": "LOADOUT",
-        "sp-used": "SP USED"
+        "sp-used": "SP USED",
+        "mounted_weapons": "MOUNTED WEAPONS",
+        "blank_weapon_mount": "{0} Weapon Mount",
+        "mounted_systems": "MOUNTED SYSTEMS"
       },
       "msg": {
         "inactive_mech": "WARNING: INACTIVE MECH - PILOT BONUSES NOT TRACKED",
