@@ -68,7 +68,9 @@ export function mechSystemView(
   // }
 
   if (doc.system.effect) {
-    eff = effectBox("EFFECT", doc.system.effect, { flow: !options?.nonInteractive || false });
+    eff = effectBox(game.i18n.localize("lancer.chat-card.label.effect"), doc.system.effect, {
+      flow: !options?.nonInteractive || false,
+    });
   }
 
   if (doc.system.actions.length) {

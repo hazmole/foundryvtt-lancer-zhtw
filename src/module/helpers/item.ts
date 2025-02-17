@@ -684,9 +684,9 @@ data-action="set" data-action-value="(int)${i}" data-path="${weapon_path}.system
   }
 
   // Generate effects
-  let effect = profile.effect ? effectBox("Effect", profile.effect) : "";
+  let effect = profile.effect ? effectBox(game.i18n.localize("lancer.chat-card.label.effect"), profile.effect) : "";
   let on_attack = profile.on_attack ? effectBox("On Attack", profile.on_attack) : "";
-  let on_hit = profile.on_hit ? effectBox("On Hit", profile.on_hit) : "";
+  let on_hit = profile.on_hit ? effectBox(game.i18n.localize("lancer.chat-card.label.onHit"), profile.on_hit) : "";
   let on_crit = profile.on_crit ? effectBox("On Crit", profile.on_crit) : "";
 
   // Generate actions

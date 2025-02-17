@@ -118,7 +118,8 @@
       "component": {
         "overcharge": "超限",
         "counters": "計數器",
-        "recharge": "充能"
+        "recharge": "充能",
+        "use": "使用"
       },
       "placeholder": {
         "name": "名稱"
@@ -281,17 +282,20 @@
           "cascade": "// 崩潰 //",
           "check": "// 判定 :: {check} //",
           "system": "// 系統 :: {title} //",
-          "mod": "// MOD :: {title} //",
-          "trait": "// TRAIT :: {title} //",
+          "mod": "// 改造 :: {title} //",
+          "trait": "// 特徵 :: {title} //",
           "tech": "// 科技 :: {title} //",
           "reaction": "// 反應 :: {title} //"
         },
         "label": {
           "trigger": "觸發",
-          "effect": "效果"
+          "effect": "效果",
+          "onAttack": "攻擊時",
+          "onHit": "命中時",
+          "onCrit": "會心一擊時"
         },
         "attack": {
-          "crit": "暴擊",
+          "crit": "會心一擊",
           "hit": "命中",
           "miss": "失手",
           "roll-all-damage": "骰傷害"

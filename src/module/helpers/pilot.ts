@@ -100,7 +100,7 @@ export function coreBonusView(item_path: string, options: HelperOptions) {
         </div>
         <div class="collapse" ${collapseParam(collapse, coreBonus, true)} style="padding: 0.5em">
           <div class="desc-text" style="grid-area: 2/2/3/3">${coreBonus.system.description}</div>
-          ${effectBox("Effect", coreBonus.system.effect)}
+          ${effectBox(game.i18n.localize("lancer.chat-card.label.effect"), coreBonus.system.effect)}
         </div>
       </li>`;
 }

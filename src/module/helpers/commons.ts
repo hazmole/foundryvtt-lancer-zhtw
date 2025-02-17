@@ -215,7 +215,9 @@ export function effectBox(title: string, text: string, options?: { add_classes?:
   if (text) {
     const flowButton = options?.flow
       ? `<div class="action-flow-container flexrow">
-        <a class="effect-flow lancer-button"><i class="cci cci-free-action i--sm"></i><span>USE</span></a>
+        <a class="effect-flow lancer-button"><i class="cci cci-free-action i--sm"></i><span>${game.i18n.localize(
+          "lancer.component.use"
+        )}</span></a>
         <hr class="vsep">
       </div>`
       : "";

@@ -90,8 +90,12 @@ export function npcReactionView(path: string, options: HelperOptions): string {
     npcFeature,
     `<div class="flexcol lancer-body">
       ${npcFeature.system.tags.find(tag => tag.lid === "tg_recharge") ? chargedIndicator(npcFeature, path) : ""}
-      ${effectBox("TRIGGER", (npcFeature.system as SystemTemplates.NPC.ReactionData).trigger, { flow: true })}
-      ${effectBox("EFFECT", npcFeature.system.effect)}
+      ${effectBox(
+        game.i18n.localize("lancer.chat-card.label.trigger"),
+        (npcFeature.system as SystemTemplates.NPC.ReactionData).trigger,
+        { flow: true }
+      )}
+      ${effectBox(game.i18n.localize("lancer.chat-card.label.effect"), npcFeature.system.effect)}
       ${compactTagListHBS(path + ".system.tags", options)}
     </div>`,
     options
@@ -110,7 +114,7 @@ export function npcSystemTraitView(path: string, options: HelperOptions): string
     `<div class="flexcol lancer-body">
       ${npcFeature.system.tags.find(tag => tag.lid === "tg_limited") ? limitedUsesIndicator(npcFeature, path) : ""}
       ${npcFeature.system.tags.find(tag => tag.lid === "tg_recharge") ? chargedIndicator(npcFeature, path) : ""}
-      ${effectBox("EFFECT", npcFeature.system.effect, { flow: true })}
+      ${effectBox(game.i18n.localize("lancer.chat-card.label.effect"), npcFeature.system.effect, { flow: true })}
       ${compactTagListHBS(path + ".system.tags", options)}
     </div>`,
     options
@@ -160,7 +164,9 @@ export function npcTechView(path: string, options: HelperOptions) {
         ${subheaderItems.join(sep)}
       </div>
       <div class="flexcol" style="padding: 0 10px;">
-        ${effectBox("EFFECT", featureData.effect, { flow: !featureData.tech_attack })}
+        ${effectBox(game.i18n.localize("lancer.chat-card.label.effect"), featureData.effect, {
+          flow: !featureData.tech_attack,
+        })}
         ${compactTagListHBS(path + ".system.tags", options)}
       </div>
     </div>
@@ -229,8 +235,8 @@ export function npcWeaponView(path: string, options: HelperOptions): string {
       npcFeature.system.origin.type
     } Feature</span>
       </div>
-      ${effectBox("ON HIT", featureData.on_hit)}
-      ${effectBox("EFFECT", featureData.effect)}
+      ${effectBox(game.i18n.localize("lancer.chat-card.label.onHit"), featureData.on_hit)}
+      ${effectBox(game.i18n.localize("lancer.chat-card.label.effect"), featureData.effect)}
       ${compactTagListHBS(path + ".system.tags", options)}
     </div>
     `,

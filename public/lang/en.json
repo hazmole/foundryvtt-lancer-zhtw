@@ -118,7 +118,8 @@
     "component": {
       "overcharge": "OVERCHARGE",
       "counters": "COUNTERS",
-      "recharge": "Recharge"
+      "recharge": "Recharge",
+      "use": "USE"
     },
     "placeholder": {
       "name": "Name"
@@ -288,7 +289,10 @@
       },
       "label": {
         "trigger": "TRIGGER",
-        "effect": "EFFECT"
+        "effect": "EFFECT",
+        "onAttack": "On Attack",
+        "onHit": "On Hit",
+        "onCrit": "On Crit"
       },
       "attack": {
         "crit": "CRIT",
