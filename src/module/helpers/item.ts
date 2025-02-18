@@ -68,6 +68,7 @@ import { CounterData } from "../models/bits/counter";
 import { slugify } from "../util/lid";
 import { TagEditForm } from "../apps/tag-editor";
 import { FullBoundedNum } from "../source-template";
+import { localizer } from "./localize";
 
 /**
  * Handlebars helper for weapon size selector
@@ -677,6 +678,11 @@ data-action="set" data-action-value="(int)${i}" data-path="${weapon_path}.system
   let profile = weapon.system.active_profile;
   let profile_path = `${weapon_path}.system.profiles.${weapon.system.selected_profile_index}`;
 
+  // Concat Weapon Type String
+  let weapon_type = `${localizer.mechWeaponSize(weapon.system.size).toUpperCase()} ${localizer
+    .mechWeaponType(profile.type)
+    .toUpperCase()}`;
+
   // Generate loading segment as needed
   let loading = "";
   if (weapon.system.all_tags.some(t => t.is_loading)) {
@@ -711,7 +717,7 @@ data-action="set" data-action-value="(int)${i}" data-path="${weapon_path}.system
         <i class="${weapon.system.destroyed ? "mdi mdi-cog" : "cci cci-weapon i--m i--light"}"> </i>
         <a class="chat-flow-button"><i class="mdi mdi-message"></i></a>
         <span class="minor" >
-          ${weapon.name} // ${weapon.system.size.toUpperCase()} ${profile.type.toUpperCase()}
+          ${weapon.name} // ${weapon_type}
         </span>
         ${collapseButton(collapse, weapon)}
         <a class="lancer-context-menu" data-path="${weapon_path}">

@@ -77,6 +77,20 @@
         "meltdown_3+": "Your mech becomes @Compendium[world.status-items.Exposed]",
         "destabilized_power_plant": "The power plant becomes unstable, beginning to eject jets of plasma. Your mech becomes @Compendium[world.status-items.Exposed].",
         "emergency_shunt": "Your mech’s cooling systems manage to contain the increasing heat; however, your mech becomes @Compendium[world.status-items.Impaired] until the end of your next turn."
+      },
+      "WeaponSize": {
+        "Main": "Main",
+        "Auxiliary": "Auxiliary",
+        "Heavy": "Heavy",
+        "Superheavy": "Superheavy"
+      },
+      "WeaponType": {
+        "Cannon": "Cannon",
+        "CQB": "CQB",
+        "Launcher": "Launcher",
+        "Melee": "Melee",
+        "Nexus": "Nexus",
+        "Rifle": "Rifle"
       }
     }
   },

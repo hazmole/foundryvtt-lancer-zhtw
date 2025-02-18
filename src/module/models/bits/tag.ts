@@ -1,6 +1,7 @@
 import { LANCER } from "../../config";
 import { PackedTagData, PackedTagTemplateData } from "../../util/unpacking/packed-types";
 import { LIDField } from "../shared";
+import { localizer } from "../../helpers/localize";
 
 // @ts-ignore
 const fields: any = foundry.data.fields;
@@ -39,9 +40,13 @@ export class Tag implements Readonly<TagData> {
     let tagConfig = game.settings.get(game.system.id, LANCER.setting_tag_config) as Record<string, TagTemplateData>;
     let assocTag = tagConfig[data.lid];
     if (assocTag) {
-      this.name = assocTag.name;
-      this.description = assocTag.description;
+      this.name = localizer.tagName(data.lid, assocTag.name);
+      this.description = localizer.tagDesc(data.lid, assocTag.description);
       this.hidden = assocTag.hidden;
+
+      if (this.name == assocTag.name) {
+        console.log(data.lid, assocTag.name);
+      }
     }
   }
 
