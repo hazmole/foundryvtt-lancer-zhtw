@@ -417,7 +417,9 @@
           "mod": "// 改造 :: {title} //",
           "trait": "// 特徵 :: {title} //",
           "tech": "// 科技 :: {title} //",
-          "reaction": "// 反應 :: {title} //"
+          "reaction": "// 反應 :: {title} //",
+          "tech-attack": "科技攻擊",
+          "invade": "入侵"
         },
         "label": {
           "trigger": "觸發",

@@ -299,7 +299,9 @@
         "mod": "// MOD :: {title} //",
         "trait": "// TRAIT :: {title} //",
         "tech": "// TECH :: {title} //",
-        "reaction": "// REACTION :: {title} //"
+        "reaction": "// REACTION :: {title} //",
+        "tech-attack": "TECH ATK",
+        "invade": "INVADE"
       },
       "label": {
         "trigger": "TRIGGER",
