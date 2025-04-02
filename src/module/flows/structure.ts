@@ -2,6 +2,7 @@
 import { LancerActor } from "../actor/lancer-actor";
 import { LANCER } from "../config";
 import { UUIDRef } from "../source-template";
+import { localizer } from "../util/localize";
 import { renderTemplateStep } from "./_render";
 import { Flow, FlowState, Step } from "./flow";
 import { LancerFlowState } from "./interfaces";
@@ -99,38 +100,45 @@ export async function preStructureRollChecks(
 }
 
 // Table of structure table titles
-const structTableTitles = [
-  "Crushing Hit",
-  "Direct Hit",
-  "System Trauma",
-  "System Trauma",
-  "System Trauma",
-  "Glancing Blow",
-  "Glancing Blow",
-];
+function structTableTitles(roll: number): string {
+  switch (roll) {
+    case 0:
+      return localizer.structTableTitle("crushing hit");
+    case 1:
+      return localizer.structTableTitle("direct hit");
+    case 2:
+    case 3:
+    case 4:
+      return localizer.structTableTitle("system trama");
+    case 5:
+    case 6:
+      return localizer.structTableTitle("glancing blow");
+  }
+  return "";
+}
 
 // Table of structure table descriptions
 function structTableDescriptions(roll: number, remStruct: number): string {
   switch (roll) {
     // Used for multiple ones
     case 0:
-      return "Your mech is damaged beyond repair – it is destroyed. You may still exit it as normal.";
+      return localizer.structTableDesc("crushing hit");
     case 1:
       switch (remStruct) {
         case 2:
-          return "Roll a HULL check. On a success, your mech is @Compendium[world.status-items.Stunned] until the end of your next turn. On a failure, your mech is destroyed.";
+          return localizer.structTableDesc("direct hit 2");
         case 1:
-          return "Your mech is destroyed.";
+          return localizer.structTableDesc("direct hit 1");
         default:
-          return "Your mech is @Compendium[world.status-items.Stunned] until the end of your next turn.";
+          return localizer.structTableDesc("direct hit 3+");
       }
     case 2:
     case 3:
     case 4:
-      return "Parts of your mech are torn off by the damage. Roll 1d6. On a 1–3, all weapons on one mount of your choice are destroyed; on a 4–6, a system of your choice is destroyed. LIMITED systems and weapons that are out of charges are not valid choices. If there are no valid choices remaining, it becomes the other result. If there are no valid systems or weapons remaining, this result becomes a DIRECT HIT instead.";
+      return localizer.structTableDesc("system trama");
     case 5:
     case 6:
-      return "Emergency systems kick in and stabilize your mech, but it’s @Compendium[world.status-items.Impaired] until the end of your next turn.";
+      return localizer.structTableDesc("glancing blow");
   }
   return "";
 }
@@ -168,7 +176,7 @@ export async function rollStructureTable(state: FlowState<LancerFlowState.Primar
 
   state.data = {
     type: "structure",
-    title: structTableTitles[result],
+    title: structTableTitles(result),
     desc: structTableDescriptions(result, remStruct),
     remStruct: remStruct,
     val: actor.system.structure.value,
@@ -207,7 +215,7 @@ export async function noStructureRemaining(
   const printCard = (game.lancer.flowSteps as Map<string, Step<any, any> | Flow<any>>).get("printStructureCard");
   if (!printCard) throw new TypeError(`printStructureCard flow step missing!`);
   if (typeof printCard !== "function") throw new TypeError(`printStructureCard flow step is not a function.`);
-  state.data.title = structTableTitles[0];
+  state.data.title = structTableTitles(0);
   state.data.desc = structTableDescriptions(0, 0);
   state.data.result = undefined;
   // Subtract the hp which was added in the preStructureRollChecks step.
@@ -247,7 +255,7 @@ export async function checkStructureMultipleOnes(
   // Crushing hits
   let one_count = (roll.terms as foundry.dice.terms.Die[])[0].results.filter(v => v.result === 1).length;
   if (one_count > 1) {
-    state.data.title = structTableTitles[0];
+    state.data.title = structTableTitles(0);
     state.data.desc = structTableDescriptions(roll.total ?? 1, 1);
     // Subtract the hp which was added in the preStructureRollChecks step.
     await actor.update({ "system.hp.value": actor.system.hp.value - actor.system.hp.max });
@@ -281,7 +289,7 @@ export async function structureInsertHullCheckButton(
       data-check-type="hull"
       data-actor-id="${actor.uuid}"
     >
-      <i class="fas fa-dice-d20 i--sm"></i> HULL
+      <i class="fas fa-dice-d20 i--sm"></i>${game.i18n.localize("lancer.stats.hull")}
     </a>`);
   }
   return true;
@@ -311,7 +319,7 @@ export async function structureInsertSecondaryRollButton(
       data-flow-type="secondaryStructure"
       data-actor-id="${actor.uuid}"
     >
-      <i class="fas fa-dice-d6 i--sm"></i> TEAR OFF
+      <i class="fas fa-dice-d6 i--sm"></i>${game.i18n.localize("lancer.flows.struct_damage.tear_off")}
     </a>`);
   }
   return true;
@@ -337,7 +345,9 @@ export async function structureInsertCascadeRollButton(
     data-flow-type="cascade"
     data-actor-id="${actor.uuid}"
   >
-    <i class="fas fa-dice-d20 i--sm"></i> <span class="horus--subtle">CASCADE CHECK</span>
+    <i class="fas fa-dice-d20 i--sm"></i> <span class="horus--subtle">${game.i18n.localize(
+      "lancer.flows.struct_damage.cascade_check"
+    )}</span>
   </a>`);
   return true;
 }
@@ -411,11 +421,11 @@ export async function secondaryStructureRoll(
     total: result.toString(),
   };
   if (result <= 3) {
-    state.data.title = "Weapon Destruction";
-    state.data.desc = "On a 1–3, all weapons on one mount of your choice are destroyed";
+    state.data.title = localizer.structTableTitle("weapon destruction");
+    state.data.desc = localizer.structTableDesc("weapon destruction");
   } else {
-    state.data.title = "System Destruction";
-    state.data.desc = "On a 4–6, a system of your choice is destroyed";
+    state.data.title = localizer.structTableTitle("system destruction");
+    state.data.desc = localizer.structTableDesc("system destruction");
   }
   return true;
 }

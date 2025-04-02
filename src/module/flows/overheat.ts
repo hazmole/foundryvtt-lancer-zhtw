@@ -2,6 +2,7 @@
 import { LancerActor } from "../actor/lancer-actor";
 import { LANCER } from "../config";
 import { UUIDRef } from "../source-template";
+import { localizer } from "../util/localize";
 import { renderTemplateStep } from "./_render";
 import { Flow, FlowState, Step } from "./flow";
 import { LancerFlowState } from "./interfaces";
@@ -94,38 +95,45 @@ export async function preOverheatRollChecks(state: FlowState<LancerFlowState.Ove
 }
 
 // Table of overheat table titles
-const overheatTableTitles = [
-  "Irreversible Meltdown",
-  "Meltdown",
-  "Destabilized Power Plant",
-  "Destabilized Power Plant",
-  "Destabilized Power Plant",
-  "Emergency Shunt",
-  "Emergency Shunt",
-];
+function overheatTableTitles(roll: number): string {
+  switch (roll) {
+    case 0:
+      return localizer.overheatTableTitle("irreversible meltdown");
+    case 1:
+      return localizer.overheatTableTitle("meltdown");
+    case 2:
+    case 3:
+    case 4:
+      return localizer.overheatTableTitle("destabilized power plant");
+    case 5:
+    case 6:
+      return localizer.overheatTableTitle("emergency shunt");
+  }
+  return "";
+}
 
 // Table of overheat table descriptions
 function overheatTableDescriptions(roll: number, remStress: number): string {
   switch (roll) {
     // Used for multiple ones
     case 0:
-      return "The reactor goes critical. your mech suffers a reactor meltdown at the end of your next turn.";
+      return localizer.overheatTableDesc("irreversible meltdown");
     case 1:
       switch (remStress) {
         case 2:
-          return "Roll an ENGINEERING check. On a success, your mech is @Compendium[world.status-items.Exposed]. On a failure, it suffers a reactor meltdown after 1d6 of your turns (rolled by the GM). A reactor meltdown can be prevented by retrying the ENGINEERING check as a free action..";
+          return localizer.overheatTableDesc("meltdown 2");
         case 1:
-          return "Your mech suffers a reactor meltdown at the end of your next turn.";
+          return localizer.overheatTableDesc("meltdown 1");
         default:
-          return "Your mech becomes @Compendium[world.status-items.Exposed]";
+          return localizer.overheatTableDesc("meltdown 3+");
       }
     case 2:
     case 3:
     case 4:
-      return "The power plant becomes unstable, beginning to eject jets of plasma. Your mech becomes @Compendium[world.status-items.Exposed].";
+      return localizer.overheatTableDesc("destabilized power plant");
     case 5:
     case 6:
-      return "Your mech’s cooling systems manage to contain the increasing heat; however, your mech becomes @Compendium[world.status-items.Impaired] until the end of your next turn.";
+      return localizer.overheatTableDesc("emergency shunt");
   }
   return "";
 }
@@ -145,7 +153,7 @@ export async function rollOverheatTable(state: FlowState<LancerFlowState.Overhea
   if (actor.is_npc() && actor.system.stress.max === 1) {
     state.data = {
       type: "overheat",
-      title: overheatTableTitles[3],
+      title: overheatTableTitles(3),
       desc: overheatTableDescriptions(3, 1),
       remStress: 1,
       val: actor.system.stress.value,
@@ -178,7 +186,7 @@ export async function rollOverheatTable(state: FlowState<LancerFlowState.Overhea
 
   state.data = {
     type: "overheat",
-    title: overheatTableTitles[result],
+    title: overheatTableTitles(result),
     desc: overheatTableDescriptions(result, remStress),
     remStress: remStress,
     val: actor.system.stress.value,
@@ -217,11 +225,11 @@ export async function noStressRemaining(state: FlowState<LancerFlowState.Overhea
   if (typeof printCard !== "function") throw new TypeError(`printOverheatCard flow step is not a function.`);
 
   if (actor.is_npc() && actor.system.stress.max == 1) {
-    state.data.title = overheatTableTitles[3];
+    state.data.title = overheatTableTitles(3);
     state.data.desc = overheatTableDescriptions(3, 1);
     state.data.result = undefined;
   } else {
-    state.data.title = overheatTableTitles[0];
+    state.data.title = overheatTableTitles(0);
     state.data.desc = overheatTableDescriptions(0, 0);
     state.data.result = undefined;
   }
@@ -257,7 +265,7 @@ export async function checkOverheatMultipleOnes(state: FlowState<LancerFlowState
   // Irreversible Meltdowns
   let one_count = (roll.terms as foundry.dice.terms.Die[])[0].results.filter(v => v.result === 1).length;
   if (one_count > 1) {
-    state.data.title = overheatTableTitles[0];
+    state.data.title = overheatTableTitles(0);
     state.data.desc = overheatTableDescriptions(roll.total ?? 1, 1);
   }
 
@@ -289,7 +297,7 @@ export async function overheatInsertEngCheckButton(
       data-check-type="engineering"
       data-actor-id="${actor.uuid}"
     >
-      <i class="fas fa-dice-d20 i--sm"></i> ENGINEERING
+      <i class="fas fa-dice-d20 i--sm"></i>${game.i18n.localize("lancer.stats.engineering")}
     </a>`);
   }
   return true;
