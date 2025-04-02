@@ -4,22 +4,22 @@
     <div class="flexcol">
       <div class="flexrow">
         <div class="details flexcol">
-          <span>{{localize "lancer.pilot-sheet.header.ll"}}</span>
+          <span>{{localize "lancer.sheets.title.licenselevel:"}}</span>
           <span class="pilot-callsign">{{system.level}}</span>
         </div>
 
         <div class="details flexcol">
-          <span>{{localize "lancer.pilot-sheet.header.cs"}}</span>
+          <span>{{localize "lancer.sheets.title.callsign:"}}</span>
           <span class="pilot-callsign">{{system.callsign}}</span>
         </div>
 
         <div class="details flexcol">
-          <span>{{localize "lancer.pilot-sheet.header.name"}}</span>
+          <span>{{localize "lancer.sheets.title.name:"}}</span>
           <span class="medium">{{actor.name}}</span>
         </div>
 
         <div class="details flexcol">
-          <span>{{localize "lancer.pilot-sheet.header.bg"}}</span>
+          <span>{{localize "lancer.sheets.title.background:"}}</span>
           <span class="medium">{{{system.background}}}</span>
         </div>
       </div>
@@ -39,12 +39,12 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="lancer-tabs" data-group="primary">
-    <a class="item lancer-tab medium" data-tab="cloud">{{localize "lancer.pilot-sheet.tabs.cloud"}}</a>
-    <a class="item lancer-tab medium" data-tab="dossier">{{localize "lancer.pilot-sheet.tabs.dossier"}}</a>
-    <a class="item lancer-tab medium" data-tab="narrative">{{localize "lancer.pilot-sheet.tabs.narrative"}}</a>
-    <a class="item lancer-tab medium" data-tab="tactical">{{localize "lancer.pilot-sheet.tabs.tactical"}}</a>
-    <a class="item lancer-tab medium" data-tab="loadout">{{localize "lancer.pilot-sheet.tabs.mech"}}</a>
-    <a class="item lancer-tab medium" data-tab="effects">{{localize "lancer.common-sheet.tabs.effects"}}</a>
+    <a class="item lancer-tab medium" data-tab="cloud">{{localize "lancer.sheets.tab.cloud"}}</a>
+    <a class="item lancer-tab medium" data-tab="dossier">{{localize "lancer.sheets.tab.pilot_dossier"}}</a>
+    <a class="item lancer-tab medium" data-tab="narrative">{{localize "lancer.sheets.tab.pilot_narrative"}}</a>
+    <a class="item lancer-tab medium" data-tab="tactical">{{localize "lancer.sheets.tab.pilot_tactical"}}</a>
+    <a class="item lancer-tab medium" data-tab="loadout">{{localize "lancer.sheets.tab.mech_active"}}</a>
+    <a class="item lancer-tab medium" data-tab="effects">{{localize "lancer.sheets.tab.effects_active"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -53,32 +53,32 @@
     <div class="tab manage" data-group="primary" data-tab="cloud">
       <div style="display: grid; grid-template: auto / 1fr 1fr;">
         <div class="card clipped" style="grid-area: 1/1/2/3;">
-          <span class="lancer-header lancer-primary major">{{localize "lancer.pilot-sheet.cloud-header.label"}}</span>
+          <span class="lancer-header lancer-primary major">{{localize "lancer.sheets.title.rm4_cloud_id"}}</span>
           <select class="lancer-input major lancer-text-field" style="text-align: center;" name="selectCloudId"
             data-type="text"  >
             {{selectOptions compConPilotList selected=system.cloud_id inverted=true}}
           </select>
           <input class="lancer-input major" style="text-align: center;" type="text" name="system.cloud_id" value="{{system.cloud_id}}"
-            data-dtype="String" placeholder="{{localize "lancer.pilot-sheet.cloud-header.raw-placeholder"}}" />
+            data-dtype="String" placeholder="{{localize "lancer.sheets.cloud.ID_placeholder"}}" />
         </div>
 
         <div class="card clipped" style="grid-area: 2/1/3/2;">
-          <span class="lancer-header lancer-primary major">{{localize "lancer.pilot-sheet.cloud-download.label"}}</span>
+          <span class="lancer-header lancer-primary major">{{localize "lancer.sheets.title.download"}}</span>
           <a class="cloud-control lancer-button" style="align-self: center;" data-action="download">
             <i class="cci cci-tech-quick i--dark i--l"></i>
           </a>
           <span class="minor desc-text" style="text-align: center;">
-            {{localize "lancer.pilot-sheet.cloud-download.lastSync" timestamp=system.last_cloud_update}}
+            {{localize "lancer.sheets.cloud.last_sync_timestamp" timestamp=system.last_cloud_update}}
           </span>
         </div>
 
         <div class="card clipped" style="grid-area: 2/2/3/3;">
-          <span class="lancer-header lancer-primary major">{{localize "lancer.pilot-sheet.cloud-upload.label"}}</span>
-          <span>{{localize "lancer.pilot-sheet.cloud-upload.wip"}}</span>
+          <span class="lancer-header lancer-primary major">{{localize "lancer.sheets.title.upload"}}</span>
+          <span>{{localize "lancer.messages.feature_in_progress"}}</span>
         </div>
 
         <div class="card clipped" style="grid-area: 3/1/4/2;">
-          <span class="lancer-header lancer-primary major">{{localize "lancer.pilot-sheet.json-import.label"}}</span>
+          <span class="lancer-header lancer-primary major">{{localize "lancer.sheets.title.import"}}</span>
           <input id="pilot-json-import" type="file" name="pilot-json-up" class="lcp-up" accept=".json">
         </div>
       </div>
@@ -88,16 +88,17 @@
     <div class="tab dossier active" data-group="primary" data-tab="dossier">
       <div class="wraprow double">
         <div class="card clipped">
-          <span class="lancer-header lancer-primary major">{{localize "lancer.pilot-sheet.dossier.cs"}}</span>
+          <span class="lancer-header lancer-primary major">{{localize "lancer.sheets.title.callsign"}}</span>
           <input class="lancer-input major" {{{getset "system.callsign" }}} type="text" data-dtype="String" />
         </div>
         <div class="card clipped">
-          <span class="lancer-header lancer-primary major">{{localize "lancer.pilot-sheet.dossier.name"}}</span>
+          <span class="lancer-header lancer-primary major">{{localize "lancer.sheets.title.name"}}</span>
           <input class="lancer-input major" name="name" value="{{actor.name}}" type="text" data-dtype="String" />
         </div>
 
-        {{{textarea-card "BACKGROUND" "system.background"}}} {{{textarea-card "HISTORY" "system.history"}}} {{{textarea-card
-        "NOTES" "system.notes"}}}
+        {{{textarea-card (localize "lancer.sheets.title.background") "system.background"}}}
+        {{{textarea-card (localize "lancer.sheets.title.history") "system.history"}}}
+        {{{textarea-card (localize "lancer.sheets.title.notes") "system.notes"}}}
       </div>
     </div>
 
@@ -105,8 +106,8 @@
     <div class="tab pilot flexcol" data-group="primary" data-tab="narrative">
       <div class="card clipped">
         <div class="flexrow">
-          {{{clicker-stat-card "LICENSE LEVEL" "mdi mdi-shield-outline" "system.level" false }}}
-          {{{stat-rollable-card "GRIT" "cci cci-armor" "system.grit" }}}
+          {{{clicker-stat-card (localize "lancer.sheets.title.licenselevel") "mdi mdi-shield-outline" "system.level" false }}}
+          {{{stat-rollable-card (localize "lancer.stats.grit") "cci cci-armor" "system.grit" }}}
         </div>
       </div>
 
@@ -114,7 +115,7 @@
       {{#if system.bond}}
         <div class="card clipped ref set" data-uuid="{{ system.bond.uuid }}">
           <h2 class="lancer-header lancer-primary clipped">
-            <span>{{upper-case (localize "lancer.pilot-sheet.narrative.bond" bondName=system.bond.name)}}</span>
+            <span>{{upper-case (localize "lancer.sheets.bond.bond_of" bondName=system.bond.name)}}</span>
             <a class="lancer-context-menu" data-path="itemTypes.bond.0">
               <i class="fas fa-ellipsis-v"></i>
             </a>
@@ -148,7 +149,7 @@
               <div class="flexrow flex-center">
                 <button class="bond-xp-button lancer-tech lancer-button grow">
                   <i class="mdi mdi-arrow-up-bold-hexagon-outline i--sm"></i>
-                  Tally XP
+                  {{localize "lancer.sheets.bond.tally_xp"}}
                 </button>
               </div>
             </div>
@@ -156,8 +157,8 @@
           <div class="flexrow">
             {{!-- Stress, XP, refresh powers --}}
             <div class="flexrow">
-              {{{generic-counter "Stress" system.bond_state.stress "system.bond_state.stress"}}}
-              {{{generic-counter "XP" system.bond_state.xp "system.bond_state.xp"}}}
+              {{{generic-counter (localize "lancer.stats.stress") system.bond_state.stress "system.bond_state.stress"}}}
+              {{{generic-counter (localize "lancer.stats.xp") system.bond_state.xp "system.bond_state.xp"}}}
               <button class="refresh-powers-button lancer-tech lancer-button flexcol flex-center">
                 <i class="mdi mdi-refresh i--sm"></i>
                 Refresh Powers
@@ -180,7 +181,7 @@
       <div class="flexrow">
         {{!-- Skill Triggers --}}
         <div class="card clipped">
-          <h2 class="lancer-header lancer-primary submajor clipped">{{localize "lancer.pilot-sheet.abilities.skills"}}</h2>
+          <h2 class="lancer-header lancer-primary submajor clipped">{{localize "lancer.sheets.title.skills"}}</h2>
           {{#each itemTypes.skill as |skill index|}} 
             {{{item-preview (concat "itemTypes.skill." index) "delete" }}}
           {{/each}}
@@ -190,7 +191,7 @@
           <div class="flexcol">
             <div class="card clipped grow">
               <div class="lancer-header lancer-primary submajor clipped">
-                <span>{{localize "lancer.pilot-sheet.narrative.burdens"}}</span>
+                <span>{{localize "lancer.sheets.bond.burdens"}}</span>
                 <a class="gen-control fas fa-plus" data-action="append" data-path="system.bond_state.burdens" data-action-value="(struct)counter"></a>
               </div>
               {{#each system.bond_state.burdens as |burden index|}}
@@ -199,7 +200,7 @@
             </div>
             <div class="card clipped grow">
               <div class="lancer-header lancer-primary submajor clipped">
-                <span>{{localize "lancer.pilot-sheet.narrative.clocks"}}</span>
+                <span>{{localize "lancer.sheets.bond.clocks"}}</span>
                 <a class="gen-control fas fa-plus" data-action="append" data-path="system.bond_state.clocks" data-action-value="(struct)counter"></a>
               </div>
               {{#each system.bond_state.clocks as |clock index|}}
@@ -211,10 +212,10 @@
       </div>
 
       <div class="card clipped">
-        <span class="lancer-header lancer-primary submajor">ATTACK UTILITIES</span>
+        <span class="lancer-header lancer-primary submajor">{{localize "lancer.sheets.title.attack_utilities"}}</span>
         <div class="lancer-flow-button-grid">
-          {{{flow-button "BASIC ATTACK" "BasicAttack" }}}
-          {{{flow-button "DAMAGE" "Damage" }}}
+          {{{flow-button (localize "lancer.sheets.attacks.basic_attack") "BasicAttack" }}}
+          {{{flow-button (localize "lancer.sheets.attacks.damage") "Damage" }}}
         </div>
       </div>
 
@@ -222,13 +223,13 @@
       <div class="flexrow">
         {{!-- Armor --}}
         <div class="card clipped">
-          <h2 class="lancer-header lancer-primary major">{{localize "lancer.pilot-sheet.tactical.armor"}}</h2>
+          <h2 class="lancer-header lancer-primary major">{{localize "lancer.sheets.title.pilot_armor"}}</h2>
           {{#each system.loadout.armor as |armor key|}} {{{pilot-armor-slot (concat "system.loadout.armor." key ".value")}}} {{/each}}
         </div>
 
         {{!-- Weapons --}}
         <div class="card clipped">
-          <h2 class="lancer-header lancer-primary major">{{localize "lancer.pilot-sheet.tactical.weapons"}}</h2>
+          <h2 class="lancer-header lancer-primary major">{{localize "lancer.sheets.title.pilot_weapon"}}</h2>
           {{#each system.loadout.weapons as |weapon key|}} {{{pilot-weapon-slot (concat "system.loadout.weapons." key ".value")}}}
           {{/each}}
         </div>
@@ -238,7 +239,7 @@
       <div class="flexrow">
         {{!-- Gear --}}
         <div class="card clipped">
-          <h2 class="lancer-header lancer-primary major clipped-top">{{localize "lancer.pilot-sheet.tactical.gear"}}</h2>
+          <h2 class="lancer-header lancer-primary major clipped-top">{{localize "lancer.sheets.title.pilot_gear"}}</h2>
           {{#each system.loadout.gear as |gear key|}} {{{pilot-gear-slot (concat "system.loadout.gear." key ".value")}}} {{/each}}
         </div>
       </div>
@@ -247,7 +248,7 @@
       <div class="flexrow">
         {{!-- Reserves --}}
         <div class="card clipped">
-          <h2 class="lancer-header lancer-primary major clipped-top">{{localize "lancer.pilot-sheet.tactical.reserves"}}</h2>
+          <h2 class="lancer-header lancer-primary major clipped-top">{{localize "lancer.sheets.title.reserves"}}</h2>
           {{#each itemTypes.reserve as |reserve index|}} {{{reserve-slot (concat "itemTypes.reserve." index)}}} {{/each}}
         </div>
       </div>
@@ -261,15 +262,15 @@
       </div>
 
       <div class="flexrow">
-        {{{clicker-stat-card "HUL" "" "system.hull" true }}}
-        {{{clicker-stat-card "AGI" "" "system.agi" true }}}
-        {{{clicker-stat-card "SYS" "" "system.sys" true }}}
-        {{{clicker-stat-card "ENG" "" "system.eng" true }}}
+        {{{clicker-stat-card (localize "lancer.stats.hul") "" "system.hull" true }}}
+        {{{clicker-stat-card (localize "lancer.stats.agi") "" "system.agi" true }}}
+        {{{clicker-stat-card (localize "lancer.stats.sys") "" "system.sys" true }}}
+        {{{clicker-stat-card (localize "lancer.stats.eng") "" "system.eng" true }}}
       </div>
 
       {{!-- Talents --}}
       <div class="card clipped">
-        <h2 class="lancer-header lancer-primary major clipped">{{localize "lancer.pilot-sheet.abilities.talents"}}</h2>
+        <h2 class="lancer-header lancer-primary major clipped">{{localize "lancer.sheets.title.talents"}}</h2>
         {{#each itemTypes.talent as |talent index|}} {{{item-preview (concat "itemTypes.talent." index) "delete" }}}
         {{/each}}
       </div>
@@ -278,13 +279,13 @@
       <div class="flexrow">
         {{!-- Licenses --}}
         <div class="card clipped">
-          <h2 class="lancer-header lancer-primary major clipped-top">{{localize "lancer.pilot-sheet.tactical.licenses"}}</h2>
+          <h2 class="lancer-header lancer-primary major clipped-top">{{localize "lancer.sheets.title.licenses"}}</h2>
           {{#each itemTypes.license as |license index|}} {{{ref-license (concat "itemTypes.license." index) }}} {{/each}}
         </div>
 
         {{!-- Core Bonuses --}}
         <div class="card clipped">
-          <h2 class="lancer-header lancer-primary major clipped-top">{{localize "lancer.pilot-sheet.tactical.cores"}}</h2>
+          <h2 class="lancer-header lancer-primary major clipped-top">{{localize "lancer.sheets.title.core_bonus"}}</h2>
           {{#each itemTypes.core_bonus as |core_bonus index|}} {{{item-preview (concat "itemTypes.core_bonus." index) "delete" }}} {{/each}}
         </div>
       </div>

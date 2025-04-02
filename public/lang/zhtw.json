@@ -25,9 +25,137 @@
       "status": "狀態/狀況",
       "talent": "天賦",
       "weapon_mod": "武器改造"
+    },
+    "action": {
+      "Protocol": "協定",
+      "Movement": "移動",
+      "Full": "完整動作",
+      "Full_Action": "完整動作",
+      "Full_Tech": "完整科技動作",
+      "Quick": "快速動作",
+      "Quick_Action": "快速動作",
+      "Free": "免費動作",
+      "Reaction": "反應",
+      "Invade": "入侵"
     }
   },
   "lancer": {
+    "stats": {
+      "tier": "等級",
+      "hul": "機體",
+      "hull": "機體",
+      "agi": "敏捷",
+      "sys": "系統",
+      "eng": "工程",
+      "max_hp": "HP上限",
+      "hp": "HP",
+      "heatcap": "熱度上限",
+      "heat": "熱度",
+      "evasion": "迴避",
+      "armor": "裝甲",
+      "structure": "結構",
+      "stress": "壓力",
+      "edef": "電子防禦",
+      "speed": "速度",
+      "save": "豁免目標",
+      "size": "大小",
+      "sensor_range": "感應範圍",
+      "tech_attack": "科技攻擊",
+      "activate": "啟動次數",
+      "activations": "啟動次數",
+      "repairs": "維修",
+      "grit": "毅力",
+      "cost": "代價",
+      "burn": "燃燒",
+      "oshield": "護盾",
+      "overcharge": "超限",
+      "core_power": "核心能量",
+      "xp": "經驗值"
+    },
+    "sheets": {
+      "tab": {
+        "cloud": "<RM-4://同步>",
+        "pilot_dossier": "<駕駛員//檔案>",
+        "pilot_narrative": "<駕駛員//敘事>",
+        "pilot_tactical": "<駕駛員//戰術>",
+        "pilot_talents": "<駕駛員//天賦>",
+        "mech_active": "<機甲//啟動>",
+        "mech_stats": "<機甲//屬性>",
+        "mech_loadout": "<機甲//裝載>",
+        "equip_loadout": "<裝備//裝載>",
+        "effects_active": "<效果//啟動>",
+        "status": "<狀態>",
+        "config": "<設定>"
+      },
+      "title": {
+        "rm4_cloud_id": "RM-4://(寰宇通信鏈路 ID)",
+        "download": "下載",
+        "upload": "上傳",
+        "import": "導入",
+        "attack_utilities": "攻擊功能",
+        "licenselevel": "牌照等級",
+        "licenselevel:": "牌照等級：",
+        "callsign": "呼號",
+        "callsign:": "呼號：",
+        "name": "名稱",
+        "name:": "名稱：",
+        "background": "背景",
+        "background:": "背景：",
+        "history": "經歷",
+        "skills": "技能觸發",
+        "talents": "天賦",
+        "pilot_armor": "護甲",
+        "pilot_weapon": "武器",
+        "pilot_gear": "裝備",
+        "reserves": "儲備",
+        "licenses": "牌照",
+        "core_bonus": "核心加成",
+        "macros": "巨集",
+        "actions": "動作",
+        "loadout": "裝載",
+        "base_stats": "基本屬性",
+        "class": "種類",
+        "class:": "種類：",
+        "templates": "模板",
+        "features": "特徵",
+        "active_effects": "啟動效果",
+        "deployer": "部署者",
+        "counters": "計數器",
+        "details": "細節說明",
+        "notes": "註記"
+      },
+      "attacks": {
+        "melee_ranged": "肉搏/遠距",
+        "basic_attack": "基本攻擊",
+        "damage": "傷害",
+        "tech": "科技"
+      },
+      "bond": {
+        "bond_of": "{bondName}之羈絆",
+        "burdens": "負擔",
+        "clocks": "刻鐘",
+        "tally_xp": "計算 XP"
+      },
+      "cloud": {
+        "load_from_compcon": "從你的 Comp/Con 帳號讀取 (若已登入)",
+        "ID_placeholder": "或直接手動輸入代碼",
+        "last_sync_timestamp": "上次同步：{timestamp}"
+      },
+      "loadout": {
+        "sp_used": "SP 使用"
+      },
+      "macro": {
+        "recharge": "重新充能",
+        "stabilize": "穩住陣腳",
+        "full_repair": "全面維修",
+        "strucure_damage": "結構傷害",
+        "overheat": "過熱"
+      }
+    },
+    "messages": {
+      "no_class_found": "查無種類",
+      "feature_in_progress": "功能開發中"
+    },
     "Actor": {
       "FIELDS": {
         "activations": { "label": "啟動" }
@@ -35,114 +163,6 @@
     },
     "placeholder": {
       "name": "名稱"
-    },
-    "common-sheet": {
-      "tabs": {
-        "effects": "<效果//啟動>"
-      }
-    },
-    "deployable-sheet": {
-      "tabs": {
-        "status": "<狀態>",
-        "config": "<設定>"
-      },
-      "deployer": {
-        "label": "部署者"
-      },
-      "stats": {
-        "label": "基本屬性"
-      }
-    },
-    "mech-sheet": {
-      "tabs": {
-        "stats": "<機甲//屬性>",
-        "loadout": "<機甲//裝載>",
-        "talents": "<駕駛員//天賦>"
-      },
-      "core": {
-        "label": "核心"
-      },
-      "actions": {
-        "label": "動作"
-      },
-      "macros": {
-        "label": "巨集"
-      },
-      "system": {
-        "label": "裝載",
-        "sp-used": "SP 使用"
-      }
-    },
-    "npc-sheet": {
-      "header": {
-        "class": "種類："
-      },
-      "class": {
-        "label": "種類",
-        "none": "無"
-      },
-      "templates": {
-        "label": "模板"
-      },
-      "features": {
-        "label": "特徵"
-      },
-      "effects": {
-        "label": "主動效果"
-      }
-    },
-    "pilot-sheet": {
-      "header": {
-        "ll": "牌照等級：",
-        "cs": "呼號：",
-        "name": "名稱：",
-        "bg": "背景："
-      },
-      "tabs": {
-        "cloud": "<RM-4://同步>",
-        "dossier": "<駕駛員//檔案>",
-        "narrative": "<駕駛員//敘事>",
-        "tactical": "<駕駛員//戰術>",
-        "loadout": "<裝備//裝載>",
-        "mech": "<機甲//啟動>"
-      },
-      "cloud-header": {
-        "label": "RM-4://(寰宇通信鏈路 ID)",
-        "vaultID": "從你的 Comp/Con 帳號讀取 (若已登入)",
-        "raw-placeholder": "或直接手動輸入代碼"
-      },
-      "cloud-download": {
-        "label": "下載",
-        "lastSync": "上次同步：{timestamp}"
-      },
-      "cloud-upload": {
-        "label": "上傳",
-        "wip": "功能開發中"
-      },
-      "json-import": {
-        "label": "導入"
-      },
-      "dossier": {
-        "cs": "呼號",
-        "name": "名稱"
-      },
-      "narrative": {
-        "bond": "與{bondName}的羈絆",
-        "burdens": "負擔",
-        "clocks": "命刻"
-      },
-      "tactical": {
-        "armor": "裝甲",
-        "weapons": "武器",
-        "gear": "裝備",
-        "reserves": "儲備",
-        "licenses": "牌照",
-        "cores": "核心加成"
-      },
-      "abilities": {
-        "skills": "技能觸發",
-        "talents": "天賦"
-      }
     },
     "chat-card": {
       "title": {

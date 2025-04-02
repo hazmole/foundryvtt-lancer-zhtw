@@ -25,9 +25,137 @@
       "status": "Status/Condition",
       "talent": "Talent",
       "weapon_mod": "Weapon Mod"
+    },
+    "action": {
+      "Protocol": "Protocol",
+      "Movement": "Movement",
+      "Full": "Full",
+      "Full_Action": "Full Action",
+      "Full_Tech": "Full Tech",
+      "Quick": "Quick",
+      "Quick_Action": "Quick Action",
+      "Free": "Free",
+      "Reaction": "Reaction",
+      "Invade": "Invade"
     }
   },
   "lancer": {
+    "stats": {
+      "tier": "TIER",
+      "hul": "HUL",
+      "hull": "HULL",
+      "agi": "AGI",
+      "sys": "SYS",
+      "eng": "ENG",
+      "max_hp": "MAX HP",
+      "hp": "HP",
+      "heatcap": "HEAT CAP",
+      "heat": "HEAT",
+      "evasion": "EVASION",
+      "armor": "ARMOR",
+      "structure": "STRUCTURE",
+      "stress": "STRESS",
+      "edef": "E-DEF",
+      "speed": "SPEED",
+      "save": "SAVE",
+      "size": "SIZE",
+      "sensor_range": "SENSORS",
+      "tech_attack": "TECH ATK",
+      "activate": "ACTIV.",
+      "activations": "ACTIVATIONS",
+      "repairs": "REPAIRS",
+      "grit": "GRIT",
+      "cost": "COST",
+      "burn": "BURN",
+      "oshield": "O.SHIELD",
+      "overcharge": "OVERCHARGE",
+      "core_power": "CORE",
+      "xp": "XP"
+    },
+    "sheets": {
+      "tab": {
+        "cloud": "<RM-4://SYNC>",
+        "pilot_dossier": "<PILOT//DOSSIER>",
+        "pilot_narrative": "<PILOT//NARRATIVE>",
+        "pilot_tactical": "<PILOT//TACTICAL>",
+        "pilot_talents": "<PILOT//TALENTS>",
+        "mech_active": "<MECH//ACTIVE>",
+        "mech_stats": "<MECH//STATS>",
+        "mech_loadout": "<MECH//LOADOUT>",
+        "equip_loadout": "<EQUIP//LOADOUT>",
+        "effects_active": "<EFFECTS//ACTIVE>",
+        "status": "<STATUS>",
+        "config": "<CONFIG>"
+      },
+      "title": {
+        "rm4_cloud_id": "RM-4://(OMNINET UPLINK ID)",
+        "download": "DOWNLOAD",
+        "upload": "UPLOAD",
+        "import": "IMPORT",
+        "attack_utilities": "ATTACK UTILITIES",
+        "licenselevel": "LICENSE LEVEL",
+        "licenselevel:": "LICENSE LEVEL:",
+        "callsign": "CALLSIGN",
+        "callsign:": "CALLSIGN:",
+        "name": "NAME",
+        "name:": "NAME:",
+        "background": "BACKGROUND",
+        "background:": "BACKGROUND:",
+        "history": "HISTORY",
+        "skills": "SKILL TRIGGERS",
+        "talents": "TALENTS",
+        "pilot_armor": "ARMOR",
+        "pilot_weapon": "WEAPONS",
+        "pilot_gear": "GEAR",
+        "reserves": "RESERVES",
+        "licenses": "LICENSES",
+        "core_bonus": "CORE BONUSES",
+        "macros": "MACROS",
+        "actions": "ACTIONS",
+        "loadout": "LOADOUT",
+        "base_stats": "BASE STATS",
+        "class": "CLASS",
+        "class:": "CLASS:",
+        "templates": "TEMPLATES",
+        "features": "FEATURES",
+        "active_effects": "ACTIVE EFFECTS",
+        "deployer": "DEPLOYER",
+        "counters": "COUNTERS",
+        "details": "DETAILS",
+        "notes": "NOTES"
+      },
+      "attacks": {
+        "melee_ranged": "MELEE/RANGED",
+        "basic_attack": "BASIC ATTACK",
+        "damage": "DAMAGE",
+        "tech": "TECH"
+      },
+      "bond": {
+        "bond_of": "BOND OF {bondName}",
+        "burdens": "BURDENS",
+        "clocks": "CLOCKS",
+        "tally_xp": "Tally XP"
+      },
+      "cloud": {
+        "load_from_compcon": "Load from your Comp/Con account (if logged in)",
+        "ID_placeholder": "or enter a code manually",
+        "last_sync_timestamp": "Last synced: {timestamp}"
+      },
+      "loadout": {
+        "sp_used": "SP USED"
+      },
+      "macro": {
+        "recharge": "Recharge",
+        "stabilize": "STABILIZE",
+        "full_repair": "FULL REPAIR",
+        "strucure_damage": "STRUCTURE",
+        "overheat": "OVERHEAT"
+      }
+    },
+    "message": {
+      "no_class_found": "NO CLASS FOUND",
+      "feature_in_progress": "FEATURE IN PROGRESS"
+    },
     "Actor": {
       "FIELDS": {
         "activations": { "label": "Activations" }
@@ -35,114 +163,6 @@
     },
     "placeholder": {
       "name": "Name"
-    },
-    "common-sheet": {
-      "tabs": {
-        "effects": "<EFFECTS//ACTIVE>"
-      }
-    },
-    "deployable-sheet": {
-      "tabs": {
-        "status": "<STATUS>",
-        "config": "<CONFIG>"
-      },
-      "deployer": {
-        "label": "DEPLOYER"
-      },
-      "stats": {
-        "label": "BASE STATS"
-      }
-    },
-    "mech-sheet": {
-      "tabs": {
-        "stats": "<MECH//STATS>",
-        "loadout": "<MECH//LOADOUT>",
-        "talents": "<PILOT//TALENTS>"
-      },
-      "core": {
-        "label": "CORE"
-      },
-      "actions": {
-        "label": "ACTIONS"
-      },
-      "macros": {
-        "label": "MACROS"
-      },
-      "system": {
-        "label": "LOADOUT",
-        "sp-used": "SP USED"
-      }
-    },
-    "npc-sheet": {
-      "header": {
-        "class": "CLASS:"
-      },
-      "class": {
-        "label": "CLASS",
-        "none": "NO CLASS FOUND"
-      },
-      "templates": {
-        "label": "TEMPLATES"
-      },
-      "features": {
-        "label": "FEATURES"
-      },
-      "effects": {
-        "label": "ACTIVE EFFECTS"
-      }
-    },
-    "pilot-sheet": {
-      "header": {
-        "ll": "LICENSE LEVEL:",
-        "cs": "CALLSIGN:",
-        "name": "NAME:",
-        "bg": "BACKGROUND:"
-      },
-      "tabs": {
-        "cloud": "<RM-4://SYNC>",
-        "dossier": "<PILOT//DOSSIER>",
-        "narrative": "<PILOT//NARRATIVE>",
-        "tactical": "<PILOT//TACTICAL>",
-        "loadout": "<EQUIP//LOADOUT>",
-        "mech": "<MECH//ACTIVE>"
-      },
-      "cloud-header": {
-        "label": "RM-4://(OMNINET UPLINK ID)",
-        "vaultID": "Load from your Comp/Con account (if logged in)",
-        "raw-placeholder": "or enter a code manually"
-      },
-      "cloud-download": {
-        "label": "DOWNLOAD",
-        "lastSync": "Last synced: {timestamp}"
-      },
-      "cloud-upload": {
-        "label": "UPLOAD",
-        "wip": "FEATURE IN PROGRESS"
-      },
-      "json-import": {
-        "label": "IMPORT"
-      },
-      "dossier": {
-        "cs": "CALLSIGN",
-        "name": "NAME"
-      },
-      "narrative": {
-        "bond": "BOND OF {bondName}",
-        "burdens": "BURDENS",
-        "clocks": "CLOCKS"
-      },
-      "tactical": {
-        "armor": "ARMOR",
-        "weapons": "WEAPONS",
-        "gear": "GEAR",
-        "reserves": "RESERVES",
-        "licenses": "LICENSES",
-        "cores": "CORE BONUSES"
-      },
-      "abilities": {
-        "skills": "SKILL TRIGGERS",
-        "talents": "TALENTS"
-      }
     },
     "chat-card": {
       "title": {
