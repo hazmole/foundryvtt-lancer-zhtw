@@ -1,7 +1,14 @@
 <div class="card clipped-bot" {{#if item_uuid}} data-uuid="{{item_uuid}}" {{/if}} style="margin: 0px;">
   <div class="lancer-header lancer-tech tech medium">
     <i class="cci cci-tech-quick i--m i--light"> </i>
-    <span>{{#if invade}}INVADE{{else}}TECH ATK{{/if}}{{#if title}} :: {{title}}{{/if}}</span>
+    <span>
+      {{#if invade}}
+        {{localize "lancer.chat-card.title.invade"}}
+      {{else}}
+        {{localize "lancer.chat-card.title.tech-atk"}}
+      {{/if}}
+      {{#if title}} :: {{title}}{{/if}}
+    </span>
     {{! TODO: refactor reroll button }}
     <!-- <a
       class="flow-button roll-attack lancer-button lancer-macro"

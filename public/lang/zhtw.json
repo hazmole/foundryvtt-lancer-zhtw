@@ -229,9 +229,12 @@
         "check": "// 判定 :: {check} //",
         "system": "// 系統 :: {title} //",
         "mod": "// 改造 :: {title} //",
+        "talent": "// 天賦 :: {title} {lvl} //",
         "trait": "// 特徵 :: {title} //",
         "tech": "// 科技 :: {title} //",
-        "reaction": "// 反應 :: {title} //"
+        "reaction": "// 反應 :: {title} //",
+        "invade": "入侵",
+        "tech-atk": "科技攻擊"
       },
       "label": {
         "trigger": "觸發",

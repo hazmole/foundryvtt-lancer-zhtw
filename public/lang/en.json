@@ -229,9 +229,12 @@
         "check": "// CHECK :: {check} //",
         "system": "// SYSTEM :: {title} //",
         "mod": "// MOD :: {title} //",
+        "talent": "// TALENT :: {title} {lvl} //",
         "trait": "// TRAIT :: {title} //",
         "tech": "// TECH :: {title} //",
-        "reaction": "// REACTION :: {title} //"
+        "reaction": "// REACTION :: {title} //",
+        "invade": "INVADE",
+        "tech-atk": "TECH ATK"
       },
       "label": {
         "trigger": "TRIGGER",
