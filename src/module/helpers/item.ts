@@ -1335,7 +1335,7 @@ export function buildCounterArrayHTML(
   return `
   <div class="card clipped double">
     <div class="lancer-header lancer-primary submajor ">
-      COUNTERS
+      ${game.i18n.localize("lancer.glossary.counters")}
       <a class="gen-control fas fa-plus" data-action="append" data-path="${path}"
        data-action-value="(struct)counter"></a>
     </div>
