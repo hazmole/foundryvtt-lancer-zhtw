@@ -1,6 +1,6 @@
 <div class="card clipped-bot" style="margin: 0px;">
   <div class="{{concat 'lancer-header lancer-' (lower-case type)}}">
-    {{localize (concat "lancer.chat-card.title." (lower-case type)) title=title}}
+    // {{localize (concat "lancer.glossary." (lower-case type))}} :: {{title}}//
   </div>
   {{! Effect }}
   <div class="effect-text">
@@ -10,7 +10,7 @@
   {{#if self_heat_result}}
     <div class="card clipped">
       <div class="lancer-mini-header collapse-trigger" data-collapse-id="{{_uuid}}-self-heat">
-        {{localize "lancer.chat-card.title.self-heat"}}
+        // {{localize "lancer.glossary.self-heat"}} //
       </div>
       <div class="collapse" data-collapse-id="{{_uuid}}-self-heat">
         {{{lancer-dice-roll self_heat_result.roll self_heat_result.tt "cci cci-heat i--m damage--heat"}}}

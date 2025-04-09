@@ -143,14 +143,14 @@ declare global {
     "lancer.tagConfig": Record<string, unknown>;
     "lancer.uiTheme": foundry.data.fields.StringField<{
       choices: {
-        gms: "lancer.uiTheme.gms";
-        gmsDark: "lancer.uiTheme.gmsDark";
-        msmc: "lancer.uiTheme.msmc";
-        horus: "lancer.uiTheme.horus";
-        ha: "lancer.uiTheme.ha";
-        ssc: "lancer.uiTheme.ssc";
-        ipsn: "lancer.uiTheme.ipsn";
-        gal: "lancer.uiTheme.gal";
+        gms: "lancer.settings.uiTheme.gms";
+        gmsDark: "lancer.settings.uiTheme.gmsDark";
+        msmc: "lancer.settings.uiTheme.msmc";
+        horus: "lancer.settings.uiTheme.horus";
+        ha: "lancer.settings.uiTheme.ha";
+        ssc: "lancer.settings.uiTheme.ssc";
+        ipsn: "lancer.settings.uiTheme.ipsn";
+        gal: "lancer.settings.uiTheme.gal";
       };
     }>;
     // "lancer.warningFor120": boolean; // Old setting, currently unused.

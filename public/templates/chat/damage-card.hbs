@@ -10,7 +10,7 @@
 
   {{!-- Reliable damage --}}
   {{#if reliable_results}}
-    <div class="lancer-mini-header" >{{localize "lancer.chat-card.title.reliable"}}</div>
+    <div class="lancer-mini-header" >// {{localize "lancer.glossary.reliable"}} //</div>
   {{/if}}
   <div>
     {{#each reliable_results as |damage key|}}
@@ -30,7 +30,7 @@
 
   {{!-- Regular damage --}}
   {{#if (or (and damage_results.length crit_damage_results.length) (and damage_results.length reliable_results.length))}}
-    <div class="lancer-mini-header" >{{localize "lancer.chat-card.title.damage"}}</div>
+    <div class="lancer-mini-header" >// {{localize "lancer.glossary.damage"}} //</div>
   {{/if}}
   <div>
     {{#each damage_results as |damage key|}}
@@ -55,7 +55,7 @@
 
   {{!-- Crit damage --}}
   {{#if crit_damage_results}}
-    <div class="lancer-mini-header">{{localize "lancer.chat-card.title.crit-damage"}}</div>
+    <div class="lancer-mini-header">// {{localize "lancer.glossary.crit_damage"}} //</div>
     <div>
       {{#each crit_damage_results as |damage key|}}
         {{#if (not damage.target)}}
@@ -86,10 +86,10 @@
 
   {{#if overkill_heat}}
     <div class="card clipped">
-      <div class="lancer-mini-header collapse-trigger" data-collapse-id="{{_uuid}}-self-heat">{{localize "lancer.chat-card.title.self-heat"}}</div>
+      <div class="lancer-mini-header collapse-trigger" data-collapse-id="{{_uuid}}-self-heat">// {{localize "lancer.glossary.self-heat"}} //</div>
       <div class="collapse" data-collapse-id="{{_uuid}}-self-heat">
         <div class="lancer-dice-total flexrow">
-          <span style="text-align: left; margin-left: 5px;">{{localize "lancer.chat-card.exclamation.overkill"}}</span>
+          <span style="text-align: left; margin-left: 5px;">{{localize "lancer.glossary.overkill!"}}</span>
           <span class="dice-total lancer-dice-total major">{{ overkill_heat }}</span>
           <i class="cci cci-heat i--m damage--heat"> </i>
         </div>

@@ -47,8 +47,8 @@ export const registerSettings = function () {
   });
 
   game.settings.register(game.system.id, LANCER.setting_floating_damage_numbers, {
-    name: "lancer.floatingDamageNumbers.name",
-    hint: "lancer.floatingDamageNumbers.hint",
+    name: "lancer.settings.floatingDamageNumbers.name",
+    hint: "lancer.settings.floatingDamageNumbers.hint",
     scope: "client",
     config: true,
     type: Boolean,
@@ -56,21 +56,21 @@ export const registerSettings = function () {
   });
 
   game.settings.register(game.system.id, LANCER.setting_ui_theme, {
-    name: "lancer.uiTheme.name",
-    hint: "lancer.uiTheme.hint",
+    name: "lancer.settings.uiTheme.name",
+    hint: "lancer.settings.uiTheme.hint",
     scope: "client",
     config: true,
     type: new foundry.data.fields.StringField({
       required: true,
       choices: {
-        gms: "lancer.uiTheme.gms",
-        gmsDark: "lancer.uiTheme.gmsDark",
-        msmc: "lancer.uiTheme.msmc",
-        horus: "lancer.uiTheme.horus",
-        ha: "lancer.uiTheme.ha",
-        ssc: "lancer.uiTheme.ssc",
-        ipsn: "lancer.uiTheme.ipsn",
-        gal: "lancer.uiTheme.gal",
+        gms: "lancer.settings.uiTheme.gms",
+        gmsDark: "lancer.settings.uiTheme.gmsDark",
+        msmc: "lancer.settings.uiTheme.msmc",
+        horus: "lancer.settings.uiTheme.horus",
+        ha: "lancer.settings.uiTheme.ha",
+        ssc: "lancer.settings.uiTheme.ssc",
+        ipsn: "lancer.settings.uiTheme.ipsn",
+        gal: "lancer.settings.uiTheme.gal",
       },
       initial: "gms",
     }),
@@ -81,18 +81,18 @@ export const registerSettings = function () {
   });
 
   game.settings.registerMenu(game.system.id, LANCER.setting_compcon_login, {
-    name: "Comp/Con Login",
-    label: "Log in to Comp/Con",
-    hint: "Log in to Comp/Con to automatically load any pilots and mechs you have access to",
+    name: "lancer.settings.compconLogin.name",
+    label: "lancer.settings.compconLogin.label",
+    hint: "lancer.settings.compconLogin.hint",
     icon: "fas fa-bars",
     type: CompconLoginForm,
     restricted: false,
   });
 
   game.settings.registerMenu(game.system.id, LANCER.setting_status_icons, {
-    name: "lancer.statusIconsConfig.menu-name",
-    label: "lancer.statusIconsConfig.menu-label",
-    hint: "lancer.statusIconsConfig.menu-hint",
+    name: "lancer.settings.statusIconsConfig.menu-name",
+    label: "lancer.settings.statusIconsConfig.menu-label",
+    hint: "lancer.settings.statusIconsConfig.menu-hint",
     icon: "cci cci-difficulty i--s",
     // @ts-expect-error
     type: StatusIconConfig,
@@ -111,9 +111,9 @@ export const registerSettings = function () {
   });
 
   game.settings.registerMenu(game.system.id, LANCER.setting_automation, {
-    name: "lancer.automation.menu-name",
-    label: "lancer.automation.menu-label",
-    hint: "lancer.automation.menu-hint",
+    name: "lancer.settings.automation.menu-name",
+    label: "lancer.settings.automation.menu-label",
+    hint: "lancer.settings.automation.menu-hint",
     icon: "mdi mdi-state-machine",
     // @ts-expect-error
     type: AutomationConfig,
@@ -128,9 +128,9 @@ export const registerSettings = function () {
   });
 
   game.settings.registerMenu(game.system.id, LANCER.setting_actionTracker, {
-    name: "lancer.actionTracker.menu-name",
-    label: "lancer.actionTracker.menu-label",
-    hint: "lancer.actionTracker.menu-hint",
+    name: "lancer.settings.actionTracker.menu-name",
+    label: "lancer.settings.actionTracker.menu-label",
+    hint: "lancer.settings.actionTracker.menu-hint",
     icon: "mdi mdi-state-machine",
     // @ts-expect-error
     type: ActionTrackerConfig,
@@ -248,50 +248,50 @@ export class AutomationOptions extends foundry.abstract.DataModel<AutomationOpti
       attacks: new fields.BooleanField({
         required: true,
         initial: true,
-        label: "lancer.automation.attacks",
-        hint: "lancer.automation.attacks-desc",
+        label: "lancer.settings.automation.attacks",
+        hint: "lancer.settings.automation.attacks-desc",
       }),
       structure: new fields.BooleanField({
         required: true,
         initial: true,
-        label: "lancer.automation.structure",
-        hint: "lancer.automation.structure-desc",
+        label: "lancer.settings.automation.structure",
+        hint: "lancer.settings.automation.structure-desc",
       }),
       overcharge_heat: new fields.BooleanField({
         required: true,
         initial: true,
-        label: "lancer.automation.overcharge_heat",
-        hint: "lancer.automation.overcharge_heat-desc",
+        label: "lancer.settings.automation.overcharge_heat",
+        hint: "lancer.settings.automation.overcharge_heat-desc",
       }),
       attack_self_heat: new fields.BooleanField({
         required: true,
         initial: true,
-        label: "lancer.automation.attack_self_heat",
-        hint: "lancer.automation.attack_self_heat-desc",
+        label: "lancer.settings.automation.attack_self_heat",
+        hint: "lancer.settings.automation.attack_self_heat-desc",
       }),
       limited_loading: new fields.BooleanField({
         required: true,
         initial: true,
-        label: "lancer.automation.limited_loading",
-        hint: "lancer.automation.limited_loading-desc",
+        label: "lancer.settings.automation.limited_loading",
+        hint: "lancer.settings.automation.limited_loading-desc",
       }),
       npc_recharge: new fields.BooleanField({
         required: true,
         initial: true,
-        label: "lancer.automation.npc_recharge",
-        hint: "lancer.automation.npc_recharge-desc",
+        label: "lancer.settings.automation.npc_recharge",
+        hint: "lancer.settings.automation.npc_recharge-desc",
       }),
       remove_templates: new fields.BooleanField({
         required: true,
         initial: false,
-        label: "lancer.automation.remove_templates",
-        hint: "lancer.automation.remove_templates-desc",
+        label: "lancer.settings.automation.remove_templates",
+        hint: "lancer.settings.automation.remove_templates-desc",
       }),
       token_size: new fields.BooleanField({
         required: true,
         initial: true,
-        label: "lancer.automation.token_size",
-        hint: "lancer.automation.token_size-desc",
+        label: "lancer.settings.automation.token_size",
+        hint: "lancer.settings.automation.token_size-desc",
       }),
     };
   }
@@ -327,20 +327,20 @@ export class ActionTrackerOptions extends foundry.abstract.DataModel<ActionTrack
       showHotbar: new fields.BooleanField({
         initial: true,
         required: true,
-        label: "lancer.actionTracker.showHotbar",
-        hint: "lancer.actionTracker.showHotbar-desc",
+        label: "lancer.settings.actionTracker.showHotbar",
+        hint: "lancer.settings.actionTracker.showHotbar-desc",
       }),
       allowPlayers: new fields.BooleanField({
         initial: true,
         required: true,
-        label: "lancer.actionTracker.allowPlayers",
-        hint: "lancer.actionTracker.allowPlayers-desc",
+        label: "lancer.settings.actionTracker.allowPlayers",
+        hint: "lancer.settings.actionTracker.allowPlayers-desc",
       }),
       printMessages: new fields.BooleanField({
         initial: true,
         required: true,
-        label: "lancer.actionTracker.printMessages",
-        hint: "lancer.actionTracker.printMessages-desc",
+        label: "lancer.settings.actionTracker.printMessages",
+        hint: "lancer.settings.actionTracker.printMessages-desc",
       }),
     };
   }
@@ -401,57 +401,57 @@ export class StatusIconConfigOptions extends foundry.abstract.DataModel<StatusIc
       defaultConditionsStatus: new fields.BooleanField({
         required: true,
         initial: true,
-        label: "lancer.statusIconsConfig.defaultConditionsStatus",
-        hint: "lancer.statusIconsConfig.defaultConditionsStatus-desc",
+        label: "lancer.settings.statusIconsConfig.defaultConditionsStatus",
+        hint: "lancer.settings.statusIconsConfig.defaultConditionsStatus-desc",
       }),
 
       cancerConditionsStatus: new fields.BooleanField({
         required: true,
         initial: false,
-        label: "lancer.statusIconsConfig.cancerConditionsStatus",
-        hint: "lancer.statusIconsConfig.cancerConditionsStatus-desc",
+        label: "lancer.settings.statusIconsConfig.cancerConditionsStatus",
+        hint: "lancer.settings.statusIconsConfig.cancerConditionsStatus-desc",
       }),
 
       cancerNPCTemplates: new fields.BooleanField({
         required: true,
         initial: false,
-        label: "lancer.statusIconsConfig.cancerNPCTemplates",
-        hint: "lancer.statusIconsConfig.cancerNPCTemplates-desc",
+        label: "lancer.settings.statusIconsConfig.cancerNPCTemplates",
+        hint: "lancer.settings.statusIconsConfig.cancerNPCTemplates-desc",
       }),
 
       hayleyConditionsStatus: new fields.BooleanField({
         required: true,
         initial: false,
-        label: "lancer.statusIconsConfig.hayleyConditionsStatus",
-        hint: "lancer.statusIconsConfig.hayleyConditionsStatus-desc",
+        label: "lancer.settings.statusIconsConfig.hayleyConditionsStatus",
+        hint: "lancer.settings.statusIconsConfig.hayleyConditionsStatus-desc",
       }),
 
       hayleyPC: new fields.BooleanField({
         required: true,
         initial: false,
-        label: "lancer.statusIconsConfig.hayleyPC",
-        hint: "lancer.statusIconsConfig.hayleyPC-desc",
+        label: "lancer.settings.statusIconsConfig.hayleyPC",
+        hint: "lancer.settings.statusIconsConfig.hayleyPC-desc",
       }),
 
       hayleyNPC: new fields.BooleanField({
         required: true,
         initial: false,
-        label: "lancer.statusIconsConfig.hayleyNPC",
-        hint: "lancer.statusIconsConfig.hayleyNPC-desc",
+        label: "lancer.settings.statusIconsConfig.hayleyNPC",
+        hint: "lancer.settings.statusIconsConfig.hayleyNPC-desc",
       }),
 
       hayleyUtility: new fields.BooleanField({
         required: true,
         initial: false,
-        label: "lancer.statusIconsConfig.hayleyUtility",
-        hint: "lancer.statusIconsConfig.hayleyUtility-desc",
+        label: "lancer.settings.statusIconsConfig.hayleyUtility",
+        hint: "lancer.settings.statusIconsConfig.hayleyUtility-desc",
       }),
 
       tommyConditionsStatus: new fields.BooleanField({
         required: true,
         initial: false,
-        label: "lancer.statusIconsConfig.tommyConditionsStatus",
-        hint: "lancer.statusIconsConfig.tommyConditionsStatus-desc",
+        label: "lancer.settings.statusIconsConfig.tommyConditionsStatus",
+        hint: "lancer.settings.statusIconsConfig.tommyConditionsStatus-desc",
       }),
     };
   }

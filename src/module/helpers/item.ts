@@ -1021,9 +1021,9 @@ export function buildActionHTML(
         <div>
           ${chip}
           <div>
-            <div class="overline">${game.i18n.localize("lancer.chat-card.label.trigger")}</div> 
+            <div class="overline">${game.i18n.localize("lancer.glossary.trigger")}</div> 
             ${action.trigger || defaultPlaceholder}
-            <div class="overline">${game.i18n.localize("lancer.chat-card.label.effect")} ${editDetails}</div>
+            <div class="overline">${game.i18n.localize("lancer.glossary.effect")} ${editDetails}</div>
             ${action.detail || defaultPlaceholder}
           </div>
         </div>

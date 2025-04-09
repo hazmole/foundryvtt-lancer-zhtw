@@ -3,7 +3,7 @@
   <header class="sheet-header card clipped-bot">
     <div class="header-fields">
       <h1 class="charname">
-        <input class="header-field" name="name" type="text" value="{{actor.name}}" placeholder="{{localize "lancer.placeholder.name"}}" />
+        <input class="header-field" name="name" type="text" value="{{actor.name}}" placeholder="{{localize "lancer.glossary.name"}}" />
       </h1>
     </div>
     <div class="details flexcol">
@@ -11,7 +11,7 @@
     </div>
 
     <div class="details flexcol">
-      <span>{{localize "lancer.sheets.title.class:"}}</span>
+      <span>{{localize "lancer.glossary.class:"}}</span>
       <span class="major">
         {{#if system.class}} {{system.class.name}} {{else}} {{localize "lancer.messages.no_class_found"}} {{/if}}
       </span>
@@ -24,36 +24,36 @@
     <div class="flexcol">
       {{!-- Stats --}}
       <div class="wraprow quintuple">
-        {{{clicker-stat-card (localize "lancer.stats.tier") (concat "cci cci-npc-tier-" system.tier) "system.tier" true }}}
-        {{{stat-rollable-card (localize "lancer.stats.hull") "" "system.hull" }}}
-        {{{stat-rollable-card (localize "lancer.stats.agi") "" "system.agi" }}}
-        {{{stat-rollable-card (localize "lancer.stats.sys") "" "system.sys" }}}
-        {{{stat-rollable-card (localize "lancer.stats.eng") "" "system.eng" }}}
-        {{{stat-edit-max-card (localize "lancer.stats.hp") "mdi mdi-heart-outline" "system.hp.value" "system.hp.max" }}}
-        {{{stat-edit-max-card (localize "lancer.stats.heat") "cci cci-heat" "system.heat.value" "system.heat.max" }}}
-        {{{stat-view-card (localize "lancer.stats.armor") "mdi mdi-shield-outline" "system.armor" }}}
-        {{{stat-edit-card (localize "lancer.stats.oshield") "mdi mdi-shield-star-outline" "system.overshield.value" }}}
-        {{{stat-edit-rollable-card (localize "lancer.stats.burn") "cci cci-burn" "system.burn" }}}
-        {{{stat-view-card (localize "lancer.stats.speed") "mdi mdi-arrow-right-bold-hexagon-outline" "system.speed" }}}
-        {{{stat-view-card (localize "lancer.stats.evasion") "cci cci-evasion" "system.evasion" }}}
-        {{{stat-view-card (localize "lancer.stats.edef") "cci cci-edef" "system.edef" }}}
-        {{{stat-view-card (localize "lancer.stats.sensor_range") "cci cci-sensor" "system.sensor_range" }}}
-        {{{stat-view-card (localize "lancer.stats.save") "cci cci-save" "system.save" }}}
+        {{{clicker-stat-card (localize "lancer.glossary.tier") (concat "cci cci-npc-tier-" system.tier) "system.tier" true }}}
+        {{{stat-rollable-card (localize "lancer.glossary.hull") "" "system.hull" }}}
+        {{{stat-rollable-card (localize "lancer.glossary.agi") "" "system.agi" }}}
+        {{{stat-rollable-card (localize "lancer.glossary.sys") "" "system.sys" }}}
+        {{{stat-rollable-card (localize "lancer.glossary.eng") "" "system.eng" }}}
+        {{{stat-edit-max-card (localize "lancer.glossary.hp") "mdi mdi-heart-outline" "system.hp.value" "system.hp.max" }}}
+        {{{stat-edit-max-card (localize "lancer.glossary.heat") "cci cci-heat" "system.heat.value" "system.heat.max" }}}
+        {{{stat-view-card (localize "lancer.glossary.armor") "mdi mdi-shield-outline" "system.armor" }}}
+        {{{stat-edit-card (localize "lancer.glossary.oshield") "mdi mdi-shield-star-outline" "system.overshield.value" }}}
+        {{{stat-edit-rollable-card (localize "lancer.glossary.burn") "cci cci-burn" "system.burn" }}}
+        {{{stat-view-card (localize "lancer.glossary.speed") "mdi mdi-arrow-right-bold-hexagon-outline" "system.speed" }}}
+        {{{stat-view-card (localize "lancer.glossary.evasion") "cci cci-evasion" "system.evasion" }}}
+        {{{stat-view-card (localize "lancer.glossary.edef") "cci cci-edef" "system.edef" }}}
+        {{{stat-view-card (localize "lancer.glossary.sensor_range") "cci cci-sensor" "system.sensor_range" }}}
+        {{{stat-view-card (localize "lancer.glossary.save") "cci cci-save" "system.save" }}}
         {{#if (eq system.size 0.5)}}
-          {{{stat-view-card (localize "lancer.stats.size") (concat "cci cci-size-half") "system.size" }}}
+          {{{stat-view-card (localize "lancer.glossary.size") (concat "cci cci-size-half") "system.size" }}}
         {{else}}
-          {{{stat-view-card (localize "lancer.stats.size") (concat "cci cci-size-" system.size) "system.size" }}}
+          {{{stat-view-card (localize "lancer.glossary.size") (concat "cci cci-size-" system.size) "system.size" }}}
         {{/if}}
-        {{{stat-view-card (localize "lancer.stats.activate") "cci cci-activate" "system.activations" }}}
-        {{{stat-edit-max-card (localize "lancer.stats.structure") "cci cci-structure" "system.structure.value" "system.structure.max" }}}
-        {{{stat-edit-max-card (localize "lancer.stats.stress") "cci cci-reactor" "system.stress.value" "system.stress.max"}}}
-        {{{tech-flow-card (localize "lancer.stats.tech_attack") "cci cci-tech-full" "system.sys"}}}
+        {{{stat-view-card (localize "lancer.glossary.activate") "cci cci-activate" "system.activations" }}}
+        {{{stat-edit-max-card (localize "lancer.glossary.structure") "cci cci-structure" "system.structure.value" "system.structure.max" }}}
+        {{{stat-edit-max-card (localize "lancer.glossary.stress") "cci cci-reactor" "system.stress.value" "system.stress.max"}}}
+        {{{tech-flow-card (localize "lancer.glossary.tech_atk") "cci cci-tech-full" "system.sys"}}}
       </div>
 
       {{!-- Class and templates --}}
       <div class="card clipped flexrow">
         <div style="padding-right: 5px;">
-          <div class="lancer-header lancer-primary submajor" style="height: 30px;">{{localize "lancer.sheets.title.class"}}</div>
+          <div class="lancer-header lancer-primary submajor" style="height: 30px;">{{localize "lancer.glossary.class"}}</div>
           <div class="flexcol">
             {{#if system.class}}
               {{{ref-npc-class system.class "system.class" }}}
@@ -64,7 +64,7 @@
         </div>
 
         <div class="flexcol" style="padding-left: 5px;">
-          <span class="lancer-header lancer-primary submajor clipped-top">{{localize "lancer.sheets.title.templates"}}</span>
+          <span class="lancer-header lancer-primary submajor clipped-top">{{localize "lancer.glossary.templates"}}</span>
           {{#each itemTypes.npc_template as |template index|}}
             {{{ref-npc-template template (concat "itemTypes.npc_template." index) }}}
           {{/each}}
@@ -73,11 +73,11 @@
 
       {{!-- Basic attack buttons --}}
       <div class="card clipped">
-        <span class="lancer-header lancer-primary submajor">{{localize "lancer.sheets.title.attack_utilities"}}</span>
+        <span class="lancer-header lancer-primary submajor">{{localize "lancer.glossary.attack_utilities"}}</span>
         <div class="lancer-flow-button-grid">
-          {{{flow-button (localize "lancer.sheets.attacks.melee_ranged") "BasicAttack" }}}
-          {{{flow-button (localize "lancer.sheets.attacks.damage") "Damage" }}}
-          {{{flow-button (localize "lancer.sheets.attacks.tech") "TechAttack" }}}
+          {{{flow-button (localize "lancer.glossary.melee_ranged") "BasicAttack" }}}
+          {{{flow-button (localize "lancer.glossary.damage") "Damage" }}}
+          {{{flow-button (localize "lancer.glossary.tech") "TechAttack" }}}
         </div>
       </div>
 
@@ -85,9 +85,9 @@
       <div class="card clipped">
         <div class="lancer-header lancer-primary submajor">
           <div style="width: 120px;"></div>
-          <span>{{localize "lancer.sheets.title.features"}}</span>
+          <span>{{localize "lancer.glossary.features"}}</span>
           <div class="lancer-button charge-macro" style="margin-top: 2px; margin-bottom: 2px; font-size: 0.75rem;">
-            <i class="mdi mdi-refresh i--sm"></i> {{localize "lancer.sheets.macro.recharge"}}
+            <i class="mdi mdi-refresh i--sm"></i> {{localize "lancer.glossary.Recharge"}}
           </div>
         </div>
         <div class="wraprow double">
@@ -97,11 +97,11 @@
       </div>
 
       {{!-- Notes --}}
-      {{{textarea-card (localize "lancer.sheets.title.notes") "system.notes"}}}
+      {{{textarea-card (localize "lancer.glossary.notes") "system.notes"}}}
 
       {{!-- Active Effects --}}
       <div class="card clipped">
-        <span class="lancer-header lancer-primary submajor">{{localize "lancer.sheets.title.active_effects"}}</span>
+        <span class="lancer-header lancer-primary submajor">{{localize "lancer.glossary.active_effects"}}</span>
         {{{effect-categories-view actor effect_categories}}} 
       </div>
     </div>

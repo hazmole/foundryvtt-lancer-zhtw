@@ -289,7 +289,7 @@ export async function structureInsertHullCheckButton(
       data-check-type="hull"
       data-actor-id="${actor.uuid}"
     >
-      <i class="fas fa-dice-d20 i--sm"></i>${game.i18n.localize("lancer.stats.hull")}
+      <i class="fas fa-dice-d20 i--sm"></i>${game.i18n.localize("lancer.glossary.hull")}
     </a>`);
   }
   return true;
@@ -319,7 +319,7 @@ export async function structureInsertSecondaryRollButton(
       data-flow-type="secondaryStructure"
       data-actor-id="${actor.uuid}"
     >
-      <i class="fas fa-dice-d6 i--sm"></i>${game.i18n.localize("lancer.flows.struct_damage.tear_off")}
+      <i class="fas fa-dice-d6 i--sm"></i>${game.i18n.localize("lancer.glossary.tear_off")}
     </a>`);
   }
   return true;
@@ -346,7 +346,7 @@ export async function structureInsertCascadeRollButton(
     data-actor-id="${actor.uuid}"
   >
     <i class="fas fa-dice-d20 i--sm"></i> <span class="horus--subtle">${game.i18n.localize(
-      "lancer.flows.struct_damage.cascade_check"
+      "lancer.glossary.cascade_check"
     )}</span>
   </a>`);
   return true;

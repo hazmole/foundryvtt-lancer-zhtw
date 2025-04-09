@@ -297,7 +297,7 @@ export async function overheatInsertEngCheckButton(
       data-check-type="engineering"
       data-actor-id="${actor.uuid}"
     >
-      <i class="fas fa-dice-d20 i--sm"></i>${game.i18n.localize("lancer.stats.engineering")}
+      <i class="fas fa-dice-d20 i--sm"></i>${game.i18n.localize("lancer.glossary.engineering")}
     </a>`);
   }
   return true;

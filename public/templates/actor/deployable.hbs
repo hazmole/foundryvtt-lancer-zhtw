@@ -8,7 +8,7 @@
           name="name"
           type="text"
           value="{{actor.name}}"
-          placeholder="{{localize 'lancer.placeholder.name'}}"
+          placeholder="{{localize "lancer.glossary.name"}}"
         />
       </h1>
     </div>
@@ -28,37 +28,37 @@
     {{! Active Tab }}
     <div class="tab manage" data-group="primary" data-tab="status">
       <div class="wraprow quadruple">
-        {{{stat-edit-max-card (localize "lancer.stats.hp") "mdi mdi-heart-outline" "system.hp.value" "system.hp.max"}}}
-        {{{stat-edit-max-card (localize "lancer.stats.heat") "cci cci-heat" "system.heat.value" "system.heat.max"}}}
-        {{{stat-edit-rollable-card (localize "lancer.stats.burn") "cci cci-burn" "system.burn"}}}
-        {{{stat-edit-card (localize "lancer.stats.oshield") "mdi mdi-shield-star-outline" "system.overshield.value"}}}
+        {{{stat-edit-max-card (localize "lancer.glossary.hp") "mdi mdi-heart-outline" "system.hp.value" "system.hp.max"}}}
+        {{{stat-edit-max-card (localize "lancer.glossary.heat") "cci cci-heat" "system.heat.value" "system.heat.max"}}}
+        {{{stat-edit-rollable-card (localize "lancer.glossary.burn") "cci cci-burn" "system.burn"}}}
+        {{{stat-edit-card (localize "lancer.glossary.oshield") "mdi mdi-shield-star-outline" "system.overshield.value"}}}
         {{#if (eq system.size 0.5)}}
-          {{{stat-view-card (localize "lancer.stats.size") "cci cci-size-half" "system.size"}}}
+          {{{stat-view-card (localize "lancer.glossary.size") "cci cci-size-half" "system.size"}}}
         {{else}}
-          {{{stat-view-card (localize "lancer.stats.size") (concat "cci cci-size-" system.size) "system.size"}}}
+          {{{stat-view-card (localize "lancer.glossary.size") (concat "cci cci-size-" system.size) "system.size"}}}
         {{/if}}
-        {{{stat-view-card (localize "lancer.stats.armor") "mdi mdi-shield-outline" "system.armor"}}}
-        {{{stat-view-card (localize "lancer.stats.evasion") "cci cci-evasion" "system.evasion"}}}
-        {{{stat-view-card (localize "lancer.stats.edef") "cci cci-edef" "system.edef"}}}
-        {{{stat-view-card (localize "lancer.stats.speed") "mdi mdi-arrow-right-bold-hexagon-outline" "system.speed"}}}
-        {{{stat-view-card (localize "lancer.stats.save") "cci cci-save" "system.save"}}}
+        {{{stat-view-card (localize "lancer.glossary.armor") "mdi mdi-shield-outline" "system.armor"}}}
+        {{{stat-view-card (localize "lancer.glossary.evasion") "cci cci-evasion" "system.evasion"}}}
+        {{{stat-view-card (localize "lancer.glossary.edef") "cci cci-edef" "system.edef"}}}
+        {{{stat-view-card (localize "lancer.glossary.speed") "mdi mdi-arrow-right-bold-hexagon-outline" "system.speed"}}}
+        {{{stat-view-card (localize "lancer.glossary.save") "cci cci-save" "system.save"}}}
 
         <div class="card clipped full lancer-flow-button-grid">
-          <span class="lancer-header lancer-primary submajor">{{localize "lancer.sheets.title.attack_utilities"}}</span>
+          <span class="lancer-header lancer-primary submajor">{{localize "lancer.glossary.attack_utilities"}}</span>
           <div class="lancer-flow-button-grid">
-            {{{flow-button (localize "lancer.sheets.attacks.basic_attack") "BasicAttack"}}}
-            {{{flow-button (localize "lancer.sheets.attacks.damage") "Damage"}}}
+            {{{flow-button (localize "lancer.glossary.basic_attack") "BasicAttack"}}}
+            {{{flow-button (localize "lancer.glossary.damage") "Damage"}}}
           </div>
         </div>
 
         <div class="card clipped full">
           <div class="lancer-header lancer-primary major">
-            {{localize "lancer.sheets.title.deployer"}}
+            {{localize "lancer.glossary.deployer"}}
           </div>
           {{{deployer-slot "system.owner.value"}}}
         </div>
 
-        {{{textarea-card (localize "lancer.sheets.title.details") "system.detail"}}}
+        {{{textarea-card (localize "lancer.glossary.details") "system.detail"}}}
       </div>
     </div>
 
@@ -67,25 +67,25 @@
       {{! Frame Stats }}
       <div class="card clipped" style="text-align: left;">
         <span class="lancer-header lancer-primary major" style="text-align: center;">{{localize
-            "lancer.sheets.title.base_stats"
+            "lancer.glossary.base_stats"
           }}</span>
         <div class="card clipped wraprow quadruple">
           <div class="wraprow quadruple">
             <div class="card clipped stat-container">
               <div class="lancer-header lancer-primary">
                 <i class="mdi mdi-heart-outline i--m i--light header-icon"> </i>
-                <span class="major">{{localize "lancer.stats.max_hp"}}</span>
+                <span class="major">{{localize "lancer.glossary.max_hp"}}</span>
               </div>
               {{!-- prettier-ignore --}}
               <input class="lancer-input major" {{{getset "system.stats.hp"}}} type="text" data-dtype="String" />
             </div>
-            {{{clicker-stat-card (localize "lancer.stats.armor") "mdi mdi-shield-outline" "system.stats.armor" false}}}
-            {{{clicker-stat-card (localize "lancer.stats.evasion") "cci cci-evasion" "system.stats.evasion" false}}}
-            {{{clicker-stat-card (localize "lancer.stats.edef") "cci cci-edef" "system.stats.edef" false}}}
-            {{{clicker-stat-card (localize "lancer.stats.heatcap") "cci cci-heatcap" "system.stats.heatcap" false}}}
-            {{{clicker-stat-card (localize "lancer.stats.speed") "mdi mdi-arrow-right-bold-hexagon-outline" "system.stats.speed" false}}}
-            {{{clicker-stat-card (localize "lancer.stats.size") "cci cci-hexagon" "system.stats.size" false}}}
-            {{{clicker-stat-card (localize "lancer.stats.cost") "cci cci-hexagon" "system.cost" false}}}
+            {{{clicker-stat-card (localize "lancer.glossary.armor") "mdi mdi-shield-outline" "system.stats.armor" false}}}
+            {{{clicker-stat-card (localize "lancer.glossary.evasion") "cci cci-evasion" "system.stats.evasion" false}}}
+            {{{clicker-stat-card (localize "lancer.glossary.edef") "cci cci-edef" "system.stats.edef" false}}}
+            {{{clicker-stat-card (localize "lancer.glossary.heatcap") "cci cci-heatcap" "system.stats.heatcap" false}}}
+            {{{clicker-stat-card (localize "lancer.glossary.speed") "mdi mdi-arrow-right-bold-hexagon-outline" "system.stats.speed" false}}}
+            {{{clicker-stat-card (localize "lancer.glossary.size") "cci cci-hexagon" "system.stats.size" false}}}
+            {{{clicker-stat-card (localize "lancer.glossary.cost") "cci cci-hexagon" "system.cost" false}}}
           </div>
         </div>
       </div>
