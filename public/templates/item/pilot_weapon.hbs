@@ -18,7 +18,7 @@
   <div class="flexcol">
     {{! Status }}
     <div class="card clipped">
-      <div class="lancer-header lancer-primary major">STATUS</div>
+      <div class="lancer-header lancer-primary major">{{localize 'lancer.sheets.misc.pilot_item_status'}}</div>
       <div class="flexrow" style="align-self: center;">
         {{#if (is-loading item)}}
           {{{loading-indicator item "item"}}}
@@ -32,24 +32,24 @@
     {{! Weapon Stats }}
     {{!-- prettier-ignore --}}
     <div class="flexrow">
-      {{{item-edit-arrayed-range        "system.range"     "RANGE"}}}
-      {{{item-edit-arrayed-damage       "system.damage"    "DAMAGE"}}}
+      {{{item-edit-arrayed-range  "system.range"   (localize "lancer.glossary.range")}}}
+      {{{item-edit-arrayed-damage "system.damage"  (localize "lancer.glossary.damage")}}}
     </div>
 
-    {{{textarea-card "DESCRIPTION" "system.description"}}}
-    {{{textarea-card "EFFECT" "system.effect"}}}
+    {{{textarea-card (localize "lancer.glossary.description") "system.description"}}}
+    {{{textarea-card (localize "lancer.glossary.effect")      "system.effect"}}}
 
     {{! Bonuses }}
     {{!-- prettier-ignore --}}
     <div>
-      {{{item-edit-arrayed-actions      "system.actions"        "ACTIONS"}}}
+      {{{item-edit-arrayed-actions      "system.actions"        (localize "lancer.glossary.actions")}}}
       {{{item-edit-arrayed-bonuses      "system.bonuses"}}}
-      {{{item-edit-arrayed-deployables  "system.deployables"    "DEPLOYABLES"}}}
-      {{{item-edit-arrayed-synergies    "system.synergies"      "SYNERGIES"}}}
+      {{{item-edit-arrayed-deployables  "system.deployables"    (localize "lancer.glossary.deployables")}}}
+      {{{item-edit-arrayed-synergies    "system.synergies"      (localize "lancer.glossary.synergies")}}}
     </div>
 
     {{! Tags }}
-    {{{item-edit-arrayed-tags "system.tags" "TAGS"}}}
+    {{{item-edit-arrayed-tags "system.tags" (localize "lancer.glossary.tags")}}}
   </div>
 
 </form>

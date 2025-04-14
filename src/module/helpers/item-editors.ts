@@ -266,14 +266,14 @@ export function item_edit_arrayed_integrated(path: string, title: string, option
 
   let intHTML = int_arr
     .map((s: string, i: number | undefined) => {
-      return `INTEGRATED ITEM: ${s}`;
+      return `${game.i18n.localize("lancer.glossary.integrated_item")}: ${s}`;
     })
     .join("");
 
   return `
     <div class="card clipped item-edit-arrayed">
       <span class="lancer-header lancer-primary submajor ">
-        INTEGRATED ITEMS
+        ${title}
       </span>
         ${intHTML}
     </div>`;

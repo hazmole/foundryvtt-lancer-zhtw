@@ -14,7 +14,7 @@
       {{#if item.isOwned}}
         <div class="flexrow flex-center">
           <span style="max-width: fit-content;">
-            UNLOCKED RANK:
+            {{localize "lancer.glossary.unlocked_rank:"}}
           </span>
           <div style="max-width: fit-content;">
             {{{l-num-input "system.curr_rank"}}}
@@ -29,7 +29,7 @@
       <div class="card">
         <div class="lancer-header lancer-primary">
           <span class="left">
-            //RANK
+            // {{localize "lancer.glossary.rank"}}
             {{rank}}
           </span>
         </div>
@@ -40,7 +40,7 @@
     {{/each}}
   </div>
   <div class="flexcol">
-    {{{std-text-input "system.manufacturer" label="Manufacturer"}}}
+    {{{std-text-input "system.manufacturer" label=(localize "lancer.glossary.Manufacturer")}}}
     {{{std-text-input "system.lid" label="LID:"}}}
     {{{std-text-input "system.key" label="Key:"}}}
   </div>

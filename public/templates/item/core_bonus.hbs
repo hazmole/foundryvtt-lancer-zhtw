@@ -10,14 +10,14 @@
 
   {{!-- Sheet Body --}}
   <div class="flexcol">
-    {{{textarea-card "DESCRIPTION"    "system.description"}}}
-    {{{textarea-card "EFFECT"         "system.effect"}}}
-    {{{textarea-card "MOUNTED EFFECT" "system.mountedEffect"}}}
-    {{{item-edit-arrayed-actions      "system.actions"      "ACTIONS"}}}
+    {{{textarea-card (localize "lancer.glossary.description")    "system.description"}}}
+    {{{textarea-card (localize "lancer.glossary.effect")         "system.effect"}}}
+    {{{textarea-card (localize "lancer.glossary.mounted_effect") "system.mountedEffect"}}}
+    {{{item-edit-arrayed-actions      "system.actions"     (localize "lancer.glossary.actions")}}}
     {{{item-edit-arrayed-bonuses      "system.bonuses"}}}
-    {{{item-edit-arrayed-synergies    "system.synergies"    "SYNERGIES"}}}
-    {{{item-edit-arrayed-deployables  "system.deployables"  "DEPLOYABLES"}}}
-    {{{counter-array system.counters      "system.counters"     true}}}
-    {{{item-edit-arrayed-integrated   "system.integrated"   "INTEGRATED ITEMS"}}}
+    {{{item-edit-arrayed-synergies    "system.synergies"   (localize "lancer.glossary.synergies")}}}
+    {{{item-edit-arrayed-deployables  "system.deployables" (localize "lancer.glossary.deployables")}}}
+    {{{counter-array system.counters  "system.counters"    true}}}
+    {{{item-edit-arrayed-integrated   "system.integrated"  (localize "lancer.glossary.integrated_items")}}}
   </div>
 </form>

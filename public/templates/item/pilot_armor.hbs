@@ -10,7 +10,7 @@
   </header>
 
   {{!-- Description --}}
-  {{{textarea-card "DESCRIPTION" "system.description"}}}
+  {{{textarea-card (localize "lancer.glossary.description") "system.description"}}}
   
   {{!-- Uses --}}
   <div>
@@ -20,10 +20,10 @@
   </div>
 
   {{!-- Bonuses --}} 
-  {{{item-edit-arrayed-actions      "system.actions"        "ACTIONS"}}}
+  {{{item-edit-arrayed-actions      "system.actions"      (localize "lancer.glossary.actions")}}}
   {{{item-edit-arrayed-bonuses      "system.bonuses"}}}
-  {{{item-edit-arrayed-deployables  "system.deployables"    "DEPLOYABLES"}}}
-  {{{item-edit-arrayed-synergies    "system.synergies"      "SYNERGIES"}}}
+  {{{item-edit-arrayed-deployables  "system.deployables"  (localize "lancer.glossary.deployables")}}}
+  {{{item-edit-arrayed-synergies    "system.synergies"    (localize "lancer.glossary.synergies")}}}
 
-  {{{item-edit-arrayed-tags "system.tags" "TAGS"}}}
+  {{{item-edit-arrayed-tags "system.tags" (localize "lancer.glossary.tags")}}}
 </form>

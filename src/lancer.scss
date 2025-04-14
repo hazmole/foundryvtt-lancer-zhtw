@@ -1930,6 +1930,7 @@ input.core-power-toggle:not(:checked)::before {
 
 .no-grow {
   flex-grow: 0 !important;
+  flex-basis: content;
 }
 
 .no-wrap {

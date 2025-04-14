@@ -14,7 +14,7 @@
       {{#if item.isOwned}}
         <div class="flexrow flex-center">
           <span style="max-width: fit-content;">
-            UNLOCKED RANK:
+            {{localize "lancer.glossary.unlocked_rank:"}}
           </span>
           <div style="max-width: fit-content;">
             {{{l-num-input "system.curr_rank"}}}
@@ -26,8 +26,8 @@
   </header>
   {{! Sheet Body }}
   <div class="flexcol">
-    {{{textarea-card "DESCRIPTION" "system.description"}}}
-    {{{textarea-card "TERSE DESCRIPTION" "system.terse"}}}
+    {{{textarea-card (localize "lancer.glossary.description") "system.description"}}}
+    {{{textarea-card (localize "lancer.glossary.terse_description") "system.terse"}}}
     <a
       class="gen-control fas fa-plus"
       data-action="append"
@@ -47,7 +47,7 @@
             style="color: white"
           />
           <span class="minor">
-            // RANK
+            // {{localize "lancer.glossary.rank"}}
             {{inc index}}
           </span>
           <a class="gen-control i--light" data-action="splice" data-path="system.ranks.{{index}}">
@@ -59,11 +59,13 @@
           {{{safe-html rank.description}}}
         </div>
         {{! Bonuses }}
-        {{{item-edit-arrayed-actions (concat "system.ranks." index ".actions") "ACTIONS"}}}
+        {{{item-edit-arrayed-actions (concat "system.ranks." index ".actions") (localize "lancer.glossary.actions")}}}
         {{{item-edit-arrayed-bonuses (concat "system.ranks." index ".bonuses")}}}
         {{{counter-array rank.counters (concat "system.ranks." index ".counters") true}}}
         <div class="integrated-wrapper card clipped flexcol">
-          <div class="lancer-header lancer-primary" style="font-weight: bold">INTEGRATED GEAR</div>
+          <div class="lancer-header lancer-primary" style="font-weight: bold">
+            {{localize "lancer.glossary.integrated_gear"}}
+          </div>
           <ul>
             {{#each rank.integrated as |integrated integ_index|}}
               <li>
@@ -74,8 +76,8 @@
             {{/each}}
           </ul>
         </div>
-        {{{item-edit-arrayed-deployables (concat "system.ranks." index ".deployables") "DEPLOYABLES"}}}
-        {{{item-edit-arrayed-synergies (concat "system.ranks." index ".synergies") "SYNERGIES"}}}
+        {{{item-edit-arrayed-deployables (concat "system.ranks." index ".deployables") (localize "lancer.glossary.deployables")}}}
+        {{{item-edit-arrayed-synergies (concat "system.ranks." index ".synergies") (localize "lancer.glossary.synergies")}}}
       </div>
     {{/each}}
   </div>
