@@ -242,9 +242,6 @@
         "load_from_compcon": "從你的 Comp/Con 帳號讀取 (若已登入)",
         "ID_placeholder": "或直接手動輸入代碼",
         "last_sync_timestamp": "上次同步：{timestamp}"
-      },
-      "misc": {
-        "pilot_item_status": "屬性"
       }
     },
     "flows": {
