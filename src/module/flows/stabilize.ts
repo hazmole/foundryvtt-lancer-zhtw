@@ -45,12 +45,12 @@ async function renderStabilizePrompt(state: FlowState<LancerFlowState.StabilizeD
 
   submit = await new Promise<boolean>((resolve, _reject) => {
     new Dialog({
-      title: `STABILIZE - ${actor.name!}`,
+      title: `${game.i18n.localize("lancer.flows.stabilize.prompt_title")} - ${actor.name!}`,
       content: template,
       buttons: {
         submit: {
           icon: '<i class="fas fa-check"></i>',
-          label: "Submit",
+          label: game.i18n.localize("lancer.flows.general.Submit"),
           callback: async dlg => {
             // Typeguard the flow data again
             if (!state.data) return;
@@ -61,7 +61,7 @@ async function renderStabilizePrompt(state: FlowState<LancerFlowState.StabilizeD
         },
         cancel: {
           icon: '<i class="fas fa-times"></i>',
-          label: "Cancel",
+          label: game.i18n.localize("lancer.flows.general.Cancel"),
           callback: async () => resolve(false),
         },
       },
@@ -79,29 +79,29 @@ async function applyStabilizeUpdates(state: FlowState<LancerFlowState.StabilizeD
   state.data.description = "";
   switch (state.data.option1) {
     case StabOptions1.Cool:
-      option1text = "Mech is cooling itself. Heat and @Compendium[world.status-items.Exposed] cleared.";
+      option1text = game.i18n.localize("lancer.flows.stabilize.Cool_Mech_desc");
       break;
     case StabOptions1.Repair:
       if (state.actor.is_mech() && state.actor.system.repairs.value <= 0) {
         ui.notifications!.warn("Mech has no repairs left. Please try again.");
         return false;
       } else {
-        option1text = "Mech has spent 1 repair to regain HP.";
+        option1text = game.i18n.localize("lancer.flows.stabilize.Restore_HP_desc");
       }
       break;
   }
   switch (state.data.option2) {
     case StabOptions2.ClearBurn:
-      option2text = "Mech has cleared all burn.";
+      option2text = game.i18n.localize("lancer.flows.stabilize.Clear_Burn_desc");
       break;
     case StabOptions2.ClearOwnCond:
-      option2text = "Mech has selected to clear own condition. Please clear manually.";
+      option2text = game.i18n.localize("lancer.flows.stabilize.Clear_Own_Condition_desc");
       break;
     case StabOptions2.ClearOtherCond:
-      option2text = "Mech has selected to clear an allied condition. Please clear manually.";
+      option2text = game.i18n.localize("lancer.flows.stabilize.Clear_Ally_Condition_desc");
       break;
     case StabOptions2.Reload:
-      option2text = "Mech has selected full reload. Weapons reloaded:<ul>";
+      option2text = game.i18n.localize("lancer.flows.stabilize.Reload_desc");
       for (const change of state.actor.loadoutHelper.reloadableItems()) {
         if (change.name && change["system.loaded"] === true) {
           option2text = option2text.concat(`<li>${change.name}</li>`);

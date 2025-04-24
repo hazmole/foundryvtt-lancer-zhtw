@@ -247,6 +247,30 @@
         "pilot_item_status": "STATUS"
       }
     },
+    "flows": {
+      "general": {
+        "Submit": "Submit",
+        "Cancel": "Cancel"
+      },
+      "stabilize": {
+        "prompt_title": "STABILIZE",
+        "prompt_description": "Please select your two Stabilize actions",
+        "option_1": "OPTION 1",
+        "option_2": "OPTION 2",
+        "Cool_Mech": "Cool Mech",
+        "Cool_Mech_desc": "Mech is cooling itself. Heat and @Compendium[world.status-items.Exposed] cleared.",
+        "Restore_HP": "Restore HP",
+        "Restore_HP_desc": "Mech has spent 1 repair to regain HP.",
+        "Reload": "Reload",
+        "Reload_desc": "Mech has selected full reload. Weapons reloaded:<ul>",
+        "Clear_Burn": "Clear Burn",
+        "Clear_Burn_desc": "Mech has cleared all burn.",
+        "Clear_Own_Condition": "Clear Own Condition",
+        "Clear_Own_Condition_desc": "Mech has selected to clear own condition. Please clear manually.",
+        "Clear_Ally_Condition": "Clear Ally Condition",
+        "Clear_Ally_Condition_desc": "Mech has selected to clear an allied condition. Please clear manually."
+      }
+    },
     "messages": {
       "no_class_found": "NO CLASS FOUND",
       "feature_in_progress": "FEATURE IN PROGRESS",

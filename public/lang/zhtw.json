@@ -247,6 +247,30 @@
         "pilot_item_status": "屬性"
       }
     },
+    "flows": {
+      "general": {
+        "Submit": "送出",
+        "Cancel": "取消"
+      },
+      "stabilize": {
+        "prompt_title": "穩住陣腳",
+        "prompt_description": "請選擇你的兩個穩住陣腳選項",
+        "option_1": "選項 1",
+        "option_2": "選項 2",
+        "Cool_Mech": "冷卻機甲",
+        "Cool_Mech_desc": "機甲已自我冷卻，清除所有熱度和 @Compendium[world.status-items.曝露] 狀態。",
+        "Restore_HP": "回復 HP",
+        "Restore_HP_desc": "機甲已消耗 1 維修並回復所有 HP。",
+        "Reload": "裝填武器",
+        "Reload_desc": "機甲選擇裝填武器。以下武器已重新裝填：<ul>",
+        "Clear_Burn": "清除燃燒",
+        "Clear_Burn_desc": "機甲已清除所有燃燒。",
+        "Clear_Own_Condition": "清除自己的狀況",
+        "Clear_Own_Condition_desc": "機甲選擇清除自己的一個狀況，請手動進行清除。",
+        "Clear_Ally_Condition": "清除隊友的狀況",
+        "Clear_Ally_Condition_desc": "機甲選擇清除隊友的一個狀況，請手動進行清除。"
+      }
+    },
     "messages": {
       "no_class_found": "查無種類",
       "feature_in_progress": "功能開發中",
