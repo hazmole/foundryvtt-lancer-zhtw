@@ -8,23 +8,23 @@
     {{{ ref-portrait-img item.img "img" item }}}
   </header>
 
-  {{{textarea-card "DESCRIPTION" "system.description"}}}
+  {{{textarea-card (localize "lancer.glossary.description") "system.description"}}}
 
   {{!-- Frame Stats --}}
   <div class="card clipped wraprow quadruple">
     <div class="wraprow quadruple">
-      {{{clicker-stat-card "HP"          "mdi mdi-heart-outline"     "system.stats.hp" false }}}
-      {{{clicker-stat-card "ARMOR"       "mdi mdi-shield-outline"    "system.stats.armor" false }}}
-      {{{clicker-stat-card "REPAIRS"     "cci cci-repair"            "system.stats.repcap" false }}}
-      {{{clicker-stat-card "EVASION"     "cci cci-evasion"           "system.stats.evasion" false }}}
-      {{{clicker-stat-card "E-DEF"       "cci cci-edef"              "system.stats.edef" false }}}
-      {{{clicker-stat-card "HEAT CAP"    "cci cci-heatcap"           "system.stats.heatcap" false }}}
-      {{{clicker-stat-card "SPEED"       "mdi mdi-arrow-right-bold-hexagon-outline" "system.stats.speed" false }}}
-      {{{clicker-stat-card "TECH ATK"    "cci cci-tech-full"         "system.stats.tech_attack" false }}}
-      {{{clicker-stat-card "SENSORS"     "cci cci-sensor"            "system.stats.sensor_range" false }}}
-      {{{clicker-stat-card "SAVE"        "cci cci-save"              "system.stats.save" false }}}
-      {{{clicker-stat-card "SYS POINTS"  "cci cci-system"            "system.stats.sp" false }}}
-      {{{clicker-stat-card "SIZE"        "cci cci-hexagon"           "system.stats.size" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.hp")           "mdi mdi-heart-outline"     "system.stats.hp" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.armor")        "mdi mdi-shield-outline"    "system.stats.armor" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.repairs")      "cci cci-repair"            "system.stats.repcap" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.evasion")      "cci cci-evasion"           "system.stats.evasion" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.edef")         "cci cci-edef"              "system.stats.edef" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.heatcap")      "cci cci-heatcap"           "system.stats.heatcap" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.speed")        "mdi mdi-arrow-right-bold-hexagon-outline" "system.stats.speed" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.tech_atk")     "cci cci-tech-full"         "system.stats.tech_attack" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.sensor_range") "cci cci-sensor"            "system.stats.sensor_range" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.save")         "cci cci-save"              "system.stats.save" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.sys_points")   "cci cci-system"            "system.stats.sp" false }}}
+      {{{clicker-stat-card (localize "lancer.glossary.size")         "cci cci-hexagon"           "system.stats.size" false }}}
     </div>
   </div>
 
@@ -57,7 +57,7 @@
   {{!-- Traits --}}
   <div class="card">
     <div class="lancer-header lancer-primary">
-      <span class="major left">TRAITS</span>
+      <span class="major left">{{localize "lancer.glossary.traits"}}</span>
       <a class="gen-control" data-action="append" data-path="system.traits" data-action-value="(struct)frame_trait" style="float: right">+</a>
     </div>
     {{#each system.traits as |trait trait_index|}}
@@ -82,14 +82,14 @@
     <div class="lancer-header lancer-bonus frame_core medium">
       <i></i>
       <input class="lancer-invisible-input major i--light" name="system.core_system.name" value="{{system.core_system.name}}" data-dtype="String" />
-      <div class="medium faded" style="justify-self: right;"> // CORE SYSTEM</div>
+      <div class="medium faded" style="justify-self: right;"> // {{localize "lancer.glossary.core_system"}}</div>
       {{{popout-editor-button "system.core_system.description" }}}
     </div>
     <div class="desc-text">{{{safe-html system.core_system.description }}}</div>
 
     {{!-- Integrated --}}
     <div class="integrated-wrapper card clipped flexcol">
-      <div class="lancer-header lancer-primary">INTEGRATED GEAR</div>
+      <div class="lancer-header lancer-primary">{{localize "lancer.glossary.integrated_gear"}}</div>
       <ul>
       {{#each system.core_system.integrated as |integrated index|}}
         <li>
@@ -98,7 +98,7 @@
           </code>
         </li>
       {{/each}}
-      {{{item-edit-arrayed-deployables "system.core_system.deployables" "DEPLOYABLES"}}}
+      {{{item-edit-arrayed-deployables "system.core_system.deployables" (localize "lancer.glossary.deployables")}}}
       </ul>
     </div>
 
@@ -107,7 +107,7 @@
       <div class="lancer-header lancer-bonus">
         <i class="mdi mdi-circle-expand i--m i--light"> </i>
         <input class="lancer-invisible-input medium i--light" name="system.core_system.passive_name" value="{{system.core_system.passive_name}}" data-dtype="String" />
-        <div class="medium faded" style="justify-self: right;"> // PASSIVE</div>
+        <div class="medium faded" style="justify-self: right;"> // {{localize "lancer.glossary.passive"}}</div>
         {{{popout-editor-button "system.core_system.passive_effect" }}}
       </div>
       <div class="desc-text">{{{safe-html system.core_system.passive_effect }}}</div>
@@ -122,7 +122,7 @@
       <div class="lancer-header lancer-bonus">
         <i class="cci cci-corebonus i--m i--light"> </i>
         <input class="lancer-invisible-input medium i--light" name="system.core_system.active_name" value="{{system.core_system.active_name}}" data-dtype="String" />
-        <div class="faded" style="justify-self: right;"> // ACTIVE</div>
+        <div class="faded" style="justify-self: right;"> // {{localize "lancer.glossary.active"}}</div>
         {{{popout-editor-button "system.core_system.active_effect" }}}
       </div>
       <div class="desc-text">{{{safe-html system.core_system.active_effect }}}</div>
@@ -131,6 +131,6 @@
         todo action
       {{/each}}
     </div>
-    {{{item-edit-arrayed-tags "system.core_system.tags" "TAGS"}}}
+    {{{item-edit-arrayed-tags "system.core_system.tags" (localize "lancer.glossary.tags")}}}
   </div>
 </form>
